@@ -1,0 +1,71 @@
+<ScrollView
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:fillViewport="true">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:padding="16dp"
+        android:background="@color/white">
+
+        <!-- Back Button and Title -->
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="56dp"
+            android:background="@color/color5E31"
+            android:padding="16dp">
+
+            <ImageView
+                android:id="@+id/backButton"
+                android:layout_width="24dp"
+                android:layout_height="24dp"
+                android:contentDescription="@string/back"
+                android:src="@drawable/back_icon" />
+
+            <TextView
+                android:id="@+id/titleText"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:text="ACT TITLE"
+                android:textColor="@android:color/white"
+                android:textSize="18sp"
+                android:textStyle="bold" />
+        </LinearLayout>
+
+        <!-- Image or Video Placeholder -->
+        <ImageView
+            android:id="@+id/mediaImageView"
+            android:layout_width="match_parent"
+            android:layout_height="200dp"
+            android:layout_marginTop="16dp"
+            android:scaleType="centerCrop"
+            android:src="@drawable/faqsview"
+            android:contentDescription="Act Image or Video Thumbnail" />
+
+        <!-- Description Text -->
+        <TextView
+            android:id="@+id/descriptionText"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="16dp"
+            android:text="The description of the act will go here. It provides details about the objectives, applicability, and other relevant information."
+            android:textColor="@android:color/black"
+            android:textSize="16sp" />
+
+        <!-- PDF Button -->
+        <Button
+            android:id="@+id/viewPdfButton"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_horizontal"
+            android:layout_marginTop="16dp"
+            android:text="PREVIEW PDF"
+            android:textColor="@android:color/white"
+            android:backgroundTint="@color/colorB925" />
+
+    </LinearLayout>
+</ScrollView>

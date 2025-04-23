@@ -1,0 +1,137 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <uses-permission android:name="android.permission.INTERNET" />
+
+    <application
+        android:allowBackup="true"
+        android:dataExtractionRules="@xml/data_extraction_rules"
+        android:fullBackupContent="@xml/backup_rules"
+        android:icon="@mipmap/ic_launcher"
+        android:label="@string/app_name"
+        android:roundIcon="@mipmap/ic_launcher_round"
+        android:supportsRtl="true"
+        android:theme="@style/Theme.MineRush"
+        tools:targetApi="31">
+        <activity
+            android:name=".User.message"
+            android:exported="false" />
+        <activity
+            android:name=".Admin.AdminSideNavActivity"
+            android:exported="false"
+            android:label="@string/title_activity_admin_side_nav"
+            android:theme="@style/Theme.MineRush.NoActionBar" />
+        <activity
+            android:name=".User.EditUserProfileActivity"
+            android:exported="false" />
+        <activity
+            android:name=".User.UserSideNavActivity"
+            android:exported="true"
+            android:label="@string/title_activity_user_side_nav"
+            android:theme="@style/Theme.MineRush.NoActionBar"></activity>
+
+        <activity
+            android:name=".User.EachRulePageActivity"
+            android:exported="false" />
+        <activity
+            android:name=".User.UserSideRulesPageActivity"
+            android:exported="false" />
+        <activity
+            android:name=".User.FaqsActivity"
+            android:exported="false" />
+        <activity
+            android:name=".User.DisclaimerActivity"
+            android:exported="false" />
+        <activity
+            android:name=".User.GlossaryActivity"
+            android:exported="false" />
+        <activity
+            android:name=".User.ApplicationFormActivity"
+            android:exported="false" />
+        <activity
+            android:name=".User.ExploreInternshipsActivity"
+            android:exported="false" />
+        <activity
+            android:name=".User.InstructionsActivity"
+            android:exported="false" />
+        <activity
+            android:name=".User.HomePageActivity"
+            android:exported="false" />
+        <activity
+            android:name=".Admin.ApplicantDetailsForRecentInternApplicationsActivity"
+            android:exported="false" />
+        <activity
+            android:name=".Admin.UserDetailsForRecentlyRegisteredUserActivity"
+            android:exported="false" />
+        <activity
+            android:name=".Admin.SideMenuAdminActivity"
+            android:exported="false" />
+        <activity
+            android:name=".Admin.NewInternApplicantActivity"
+            android:exported="false" />
+        <activity
+            android:name=".Admin.RecentApplicationsApplicantDetailsActivity"
+            android:exported="false" />
+        <activity
+            android:name=".Admin.UserDetailsViewActivity"
+            android:exported="false" />
+        <activity
+            android:name=".Admin.RecentlyRegisteredUsersViewDetailsActivity"
+            android:exported="false" />
+        <activity
+            android:name=".Admin.ManageUsersActivity"
+            android:exported="false" />
+        <activity
+            android:name=".Admin.UpdateExistingRuleActivity"
+            android:exported="false" />
+        <activity
+            android:name=".Admin.AddANewRuleActivity"
+            android:exported="false" />
+        <activity
+            android:name=".Admin.RulesAndActsActivity"
+            android:exported="false" />
+        <activity
+            android:name=".Admin.AddFaqActivity"
+            android:exported="false" />
+        <activity
+            android:name=".Admin.AddInternshipDetailsActivity"
+            android:exported="false" />
+        <activity
+            android:name=".Admin.AdminHomeActivity"
+            android:exported="false" />
+        <activity
+            android:name=".SideMenuNavBar"
+            android:exported="false" />
+        <activity
+            android:name=".ContactUsActivity"
+            android:exported="false" />
+        <activity
+            android:name=".AboutActivty"
+            android:exported="false" />
+        <activity
+            android:name=".SignInActivity"
+            android:exported="false" />
+        <activity
+            android:name=".LoginActivity"
+            android:exported="true">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+        <activity
+            android:name=".WelcomePageActivity"
+            android:exported="false"
+            android:theme="@style/Theme.MineRush" />
+        <activity
+            android:name=".MainActivity"
+            android:exported="false"
+            android:label="@string/app_name" />
+
+        <activity android:name=".ChatPageActivity"
+            android:exported="false"/>
+    </application>
+
+</manifest>

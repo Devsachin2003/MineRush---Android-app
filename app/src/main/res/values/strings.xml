@@ -1,0 +1,268 @@
+<resources>
+    <string name="app_name">MineRush</string>
+    <string name="welcome_to_mine_rush">MineRush</string>
+    <string name="description">The personalized chatbot app dedicated for the mining industry.</string>
+    <string name="login">LOGIN</string>
+    <string name="enter_username">Enter username</string>
+    <string name="enter_password">Enter password</string>
+    <string name="dont_have_an_account">Don\'t have an account?</string>
+    <string name="LOG_IN">LOGIN</string>
+    <string name="sign_in">SIGN-IN</string>
+    <string name="enter_full_name">Enter full name</string>
+    <string name="gender_text">Gender</string>
+    <string name="enter_age">Enter age</string>
+    <string name="enter_user_name">Enter username</string>
+    <string name="enter_pass_word">Enter password</string>
+    <string name="enter_email_address">Enter email address</string>
+    <string name="enter_mobile_number">Enter mobile number</string>
+    <string name="choose_your_role">Choose your role</string>
+    <string name="about_us">ABOUT US</string>
+    <string name="contact_us">CONTACT US</string>
+    <string name="contact_email">Send your feedbacks and queries via the below mentioned E-mail address. Email-id: helpminerush@gmail.com</string>
+    <string name="recently_registered_users">Recently registered users</string>
+    <string name="new_internship_applications">New internship applications</string>
+    <string name="tap_here">Tap Here</string>
+    <string name="notification">NOTIFICATION</string>
+    <string name="notifications">Notifications!</string>
+    <string name="rules_and_acts">Rules and acts</string>
+    <string name="internships">Internships</string>
+    <string name="faqs">FAQs</string>
+    <string name="welcome_admin">WELCOME ADMIN!</string>
+    <string name="add_internship_details">ADD INTERNSHIP DETAILS</string>
+    <string name="enter_internship_title">Enter Internship title</string>
+    <string name="enter_company_name">Enter company name</string>
+    <string name="enter_tenure">Enter Tenure</string>
+    <string name="add_description">Add description</string>
+    <string name="enter_requirements">Enter requirements</string>
+    <string name="enter_stipend_amount">Enter stipend amount</string>
+    <string name="application_process">Application process</string>
+    <string name="enter_application_process">Enter application process</string>
+    <string name="enter_learning_outcomes">Enter learning outcomes</string>
+    <string name="add">ADD</string>
+    <string name="contact_information">Contact information</string>
+    <string name="add_faqs">ADD FAQs</string>
+    <string name="select_faq_section">Select FAQ Section</string>
+    <string name="enter_question">Enter question</string>
+    <string name="enter_answer">Enter answer</string>
+    <string name="rules_and_acts_edit">RULES AND ACTS</string>
+    <string name="update_existing_acts">Update existing acts</string>
+    <string name="add_a_new_rule">Add a new rule</string>
+    <string name="update_an_existing_rule">Update an existing rule</string>
+    <string name="add_a_new_rule_act">ADD A NEW RULE/ACT</string>
+    <string name="select_rule_name">Select rule name</string>
+    <string name="enter_relevant_video_url">Enter relevant video URL</string>
+    <string name="enter_the_name_of_rule_act_name">Enter the name of rule/act name</string>
+    <string name="upload_document">Upload document</string>
+    <string name="submit">SUBMIT</string>
+    <string name="enter_description">Enter description</string>
+    <string name="update_existing_rule_act">UPDATE EXISTING RULE/ACT</string>
+    <string name="upload_app_icon">Upload app icon</string>
+    <string name="manage_users">MANAGE USERS</string>
+    <string name="view_recently_registered_users">RECENTLY REGISTERED USERS</string>
+    <string name="applicant_details">APPLICANT DETAILS</string>
+    <string name="manage_user">Manage users</string>
+    <string name="manage_faq">MANAGE FAQs</string>
+    <string name="add_faq">ADD FAQ</string>
+    <string name="recently_registered_user">RECENTLY REGISTERED USERS</string>
+    <string name="user_details">USER DETAILS</string>
+    <string name="name">NAME:</string>
+    <string name="username">USERNAME</string>
+    <string name="usernames">USERNAME:</string>
+    <string name="gender">GENDER:</string>
+    <string name="phone">PHONE:</string>
+    <string name="email">EMAIL:</string>
+    <string name="organization">ORGANIZATION:</string>
+    <string name="role">ROLE:</string>
+    <string name="recent_applications">RECENT APPLICATIONS</string>
+    <string name="applicant_detail">APPLICANT DETAILS</string>
+    <string name="branch">BRANCH:</string>
+    <string name="year_of_study">YEAR OF STUDY:</string>
+    <string name="skills">SKILLS:</string>
+    <string name="statement_of_purpose">STATEMENT OF PURPOSE:</string>
+    <string name="agreed_to_the_terms">AGREED TO THE TERMS:</string>
+    <string name="appprove">APPPROVE</string>
+    <string name="cancel">CANCEL</string>
+    <string name="reject">REJECT</string>
+    <string name="click_here">CLICK HERE</string>
+    <string name="username_1">Username:</string>
+    <string name="role_1">Role:</string>
+    <string name="email_1">Email:</string>
+    <string name="password_1">Password:</string>
+    <string name="view">View</string>
+    <string name="username_2">USERNAME:</string>
+    <string name="view_profile">VIEW PROFILE</string>
+    <string name="role_name">ROLE</string>
+    <string name="role_type">ROLE:</string>
+    <string name="email_id">EMAIL:</string>
+    <string name="recently_registered_users_heading">RECENTLY REGISTERED USERS</string>
+    <string name="sign_in_option">Sign In</string>
+    <string name="name_sub">Name:</string>
+    <string name="phone_sub">Phone:</string>
+    <string name="area_of_interest">Area of interest:</string>
+    <string name="recent_registered_user">RECENTLY REGISTERED USER</string>
+    <string name="branch_det">BRANCH:</string>
+    <string name="year_of_study_det">YEAR OF STUDY:</string>
+    <string name="skills_tv">SKILLS:</string>
+    <string name="statement_of_purpose_tv">STATEMENT OF PURPOSE:</string>
+    <string name="applicant_details_tv">APPLICANT DETAILS</string>
+    <string name="navigation_drawer_open">Open navigation drawer</string>
+    <string name="navigation_drawer_close">Close navigation drawer</string>
+    <string name="welcome_username">WELCOME, USERNAME!</string>
+    <string name="hello_how_can_i_help_you">HELLO! HOW CAN I HELP YOU?</string>
+    <string name="hello">HELLO!</string>
+    <string name="how_can_i_help_you">How can I help you?</string>
+    <string name="hello_user">Hello!</string>
+    <string name="instructions">INSTRUCTIONS</string>
+    <string name="new_chat">New Chat</string>
+    <string name="rules_and_acts_tv">Rules and Acts</string>
+    <string name="instructions_tv">Instructions</string>
+    <string name="explore_internships_tv">Explore internships</string>
+    <string name="glossary_tv">Glossary</string>
+    <string name="disclaimer_tv">Disclaimer</string>
+    <string name="faqs_tv">FAQs</string>
+    <string name="explore_internships">EXPLORE INTERNSHIPS</string>
+    <string name="welcome_to_mining_industry_internship_assistance_tv">Welcome to Mining Industry Internship Assistance!</string>
+    <string-array name="dropdown_items">
+        <item>Choose your role</item>
+        <item>Stakeholder</item>
+        <item>Customer</item>
+
+    </string-array>
+
+    <string-array name="internship_type">
+        <item>Offline</item>
+        <item>Online</item>
+
+    </string-array>
+    <string name="location">Location</string>
+    <string-array name="locations">
+        <item>Mangalore</item>
+        <item>Neyveli</item>
+        <item>Singarameni</item>
+    </string-array>
+
+    <string-array name="faq_types">
+        <item>About the chatbot</item>
+        <item>Stakeholders and customers</item>
+        <item>Using and supporting the chatbot</item>
+    </string-array>
+
+
+    <string name="internshiptype">Location</string>
+    <string name="apply_for_internship">APPLY FOR INTERNSHIP</string>
+    <string name="apply">APPLY</string>
+    <string name="upload_proof">UPLOAD PROOF:</string>
+    <string name="statement_of_purpose1">STATEMENT OF PURPOSE:</string>
+    <string name="branch_txt">BRANCH</string>
+    <string name="upload">UPLOAD</string>
+    <string name="glossary">GLOSSARY</string>
+    <string name="glossary_overview">The following is a list of glossary terms and their definitions for your reference.</string>
+    <string name="internship_role">Internship role</string>
+    <string name="company_name">Company name</string>
+    <string name="location_txt">Location</string>
+    <string name="online_internship">Online Internship</string>
+    <string name="desription">Desription</string>
+    <string name="glossary_term">Glossary term</string>
+    <string name="definition_txt">definition</string>
+    <string name="disclaimer_head">DISCLAIMER</string>
+    <string name="disclaimer_text">
+This app provides general information and tools for stakeholders and customers in the coal mining industry. While efforts are made to ensure accuracy, the content is not a substitute for professional advice or regulatory standards. Users should consult qualified experts and regulatory bodies for guidance tailored to their needs. The app developers are not liable for any losses or damages arising from use of this app.</string>
+    <string name="faq_page_overview">Welcome to our FAQ section! Here you\'ll find answers to the most common questions about MineRush. We\'ve organized the information to help you quickly find what you need. To explore more queries, simply scroll down and click on the relevant subheadings. If you can\'t find the answer you\'re looking for, feel free to contact our support team.</string>
+    <string name="faqs_txt">FAQs</string>
+    <string name="about_the_chatbot_heading">ABOUT THE CHATBOT</string>
+    <string name="stakeholders_and_customers_txt">STAKEHOLDERS AND CUSTOMERS</string>
+    <string name="using_and_supporting_chatbot">USING AND SUPPORTING CHATBOT</string>
+    <string name="email_txt">EMAIL</string>
+    <string name="name_txt">NAME</string>
+    <string name="gender_txt">GENDER</string>
+    <string name="date_of_birth_txt">DATE OF BIRTH</string>
+    <string name="year_of_study_txt">YEAR OF STUDY</string>
+    <string name="skills_txt">SKILLS</string>
+    <string name="faq_term">Faq term</string>
+    <string name="question_txt">Question</string>
+    <string name="rules_and_acts_txt">RULES AND ACTS</string>
+    <string name="coal_mining_act_1952">COAL MINING ACT, 1952</string>
+    <string name="indian_explosives_act_1884">INDIAN EXPLOSIVES ACT, 1884</string>
+    <string name="colliery_control_order_2004">COLLIERY CONTROL ORDER, 2004</string>
+    <string name="colliery_control_act_2000">COLLIERY CONTROL ACT, 2000</string>
+    <string name="the_coal_mines_regulations_2017">THE COAL MINES REGULATIONS, 2017</string>
+    <string name="land_acquisition_act_1894">LAND ACQUISITION ACT, 1894</string>
+    <string name="payment_of_wages_act_1956">PAYMENT OF WAGES ACT, 1956</string>
+    <string name="coal_bearing_act_1957">COAL BEARING ACT, 1957</string>
+    <string name="r_r_act_2013"><![CDATA[R & R ACT, 2013]]></string>
+    <string name="back">Back</string>
+    <string name="heading">Heading</string>
+    <string name="minerushbot">MINERUSHBOT</string>
+    <string-array name="internshiptype">
+        <item>Online</item>
+        <item>Offline</item>
+    </string-array>
+    <string-array name="FAQ_sections">
+        <item> </item>
+        <item>About the chatbot</item>
+        <item>Stakeholders and customers</item>
+        <item>Using and supporting the chatbot</item>
+    </string-array>
+    <string-array name="Rules_page">
+        <item>Coal mines act, 1952</item>
+        <item>Indian explosives act, 1884 </item>
+        <item>Colliery control act, 2000</item>
+        <item>Colliery control act, 2004</item>
+        <item>The coal mines regulations, 2017</item>
+        <item>Payment of wages(mines) rules, 1956</item>
+        <item>CBA ACT, 1957</item>
+        <item>Land acquisition act, 1894</item>
+        <item>R &amp; R act, 2013</item>
+
+    </string-array>
+
+    <string name="open_drawer">Open navigation drawer</string>
+    <string name="close_drawer">Close navigation drawer</string>
+    <string name="title_activity_user_side_nav">UserSideNavActivity</string>
+    <string name="nav_header_title">Android Studio</string>
+    <string name="nav_header_subtitle">android.studio@android.com</string>
+    <string name="nav_header_desc">Navigation header</string>
+    <string name="action_settings">Settings</string>
+
+    <string name="menu_home">Home</string>
+    <string name="menu_gallery">Gallery</string>
+    <string name="menu_slideshow">Slideshow</string>
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+    <string name="my_profile">MY PROFILE</string>
+    <string name="gender_my_profile">GENDER:</string>
+    <string name="age">AGE:</string>
+    <string name="user_phone">PHONE:</string>
+    <string name="user_role">ROLE:</string>
+    <string name="user_organization">ORGANIZATION:</string>
+    <string name="edit_profile">EDIT PROFILE</string>
+    <string name="edit_user_profile">EDIT PROFILE</string>
+    <string name="user_profile_role">ROLE:</string>
+    <string name="save_details">SAVE DETAILS</string>
+    <string name="reset">RESET</string>
+    <string name="profile_picture">PROFILE PICTURE:</string>
+    <string name="home">Home</string>
+    <string name="user_about_us">About us</string>
+    <string name="user_contact_us">Contact us</string>
+    <string name="user_my_profile">My profile</string>
+    <string name="user_log_out">Log out</string>
+    <string name="title_activity_admin_side_nav">AdminSideNavActivity</string>
+    <string name="about">About</string>
+    <string name="admin_contact_us">Contact us</string>
+    <string name="admin_logout">Logout</string>
+    <string name="admin_name">ADMIN NAME</string>
+    <string name="enter_relevant_image">Enter relevant image</string>
+    <string name="using_explore_internship_portal">USING EXPLORE INTERNSHIP PORTAL</string>
+    <string name="enter_organization">ENTER ORGANIZATION</string>
+    <string name="re_enter_password">Re-enter password</string>
+    <string name="enter_organization_tv">Enter Organization</string>
+    <string name="minerush">MineRush</string>
+    <string name="view_pdf">VIEW PDF</string>
+    <string name="age_value">age</string>
+    <string name="email_value">email_value\n</string>
+    <string name="phone_value">phone_no</string>
+    <string name="role_value">role_type</string>
+    <string name="organization_value">organization_value</string>
+
+
+</resources>

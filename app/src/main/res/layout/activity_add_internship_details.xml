@@ -1,0 +1,255 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/main"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".Activity.Admin.AddInternshipDetailsActivity">
+
+    <View
+        android:id="@+id/view"
+        android:layout_width="match_parent"
+        android:layout_height="120dp"
+        android:background="@color/color5E31"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <ImageView
+        android:id="@+id/backIV"
+        android:layout_width="50dp"
+        android:layout_height="50dp"
+        android:layout_marginStart="20dp"
+        android:src="@drawable/back_icon"
+        app:layout_constraintBottom_toBottomOf="@+id/view"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/textView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:fontFamily="@font/myanmar_regular"
+        android:gravity="center"
+        android:text="@string/add_internship_details"
+        android:textColor="@color/white"
+        android:textSize="27sp"
+        app:layout_constraintBottom_toBottomOf="@+id/view"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@+id/backIV"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.562" />
+
+    <androidx.core.widget.NestedScrollView
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/view" >
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:paddingBottom="10dp">
+
+            <EditText
+                android:id="@+id/internshipTitleET"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginHorizontal="40dp"
+                android:layout_marginTop="40dp"
+                android:background="@drawable/edit_text_box"
+                android:fontFamily="@font/myanmar_bold"
+                android:gravity="center_vertical"
+                android:hint="@string/enter_internship_title"
+                android:paddingVertical="5dp"
+                android:paddingStart="15dp"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <EditText
+                android:id="@+id/companyNameET"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginHorizontal="40dp"
+                android:layout_marginTop="15dp"
+                android:background="@drawable/edit_text_box"
+                android:fontFamily="@font/myanmar_bold"
+                android:gravity="center_vertical"
+                android:hint="@string/enter_company_name"
+                android:paddingVertical="5dp"
+                android:paddingStart="15dp"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="0.475"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/internshipTitleET" />
+
+            <EditText
+                android:id="@+id/locationET"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginHorizontal="40dp"
+                android:layout_marginTop="15dp"
+                android:background="@drawable/edit_text_box"
+                android:fontFamily="@font/myanmar_bold"
+                android:gravity="center_vertical"
+                android:hint="Enter Location"
+                android:paddingVertical="5dp"
+                android:paddingStart="15dp"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="0.475"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/companyNameET" />
+
+            <EditText
+                android:id="@+id/tentureET"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginHorizontal="40dp"
+                android:layout_marginTop="15dp"
+                android:background="@drawable/edit_text_box"
+                android:fontFamily="@font/myanmar_bold"
+                android:gravity="center_vertical"
+                android:hint="@string/enter_tenure"
+                android:paddingVertical="5dp"
+                android:paddingStart="15dp"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/locationET" />
+
+            <EditText
+                android:id="@+id/requirementsET"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginHorizontal="40dp"
+                android:layout_marginTop="15dp"
+                android:background="@drawable/edit_text_box"
+                android:fontFamily="@font/myanmar_bold"
+                android:gravity="center_vertical"
+                android:hint="@string/enter_requirements"
+                android:paddingVertical="5dp"
+                android:paddingStart="15dp"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/tentureET" />
+
+            <EditText
+                android:id="@+id/descriptionET"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginHorizontal="40dp"
+                android:layout_marginTop="15dp"
+                android:background="@drawable/edit_text_box"
+                android:fontFamily="@font/myanmar_bold"
+                android:gravity="center_vertical"
+                android:hint="@string/add_description"
+                android:paddingVertical="5dp"
+                android:paddingStart="15dp"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/requirementsET" />
+
+            <EditText
+                android:id="@+id/stipendAmountET"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginHorizontal="40dp"
+                android:layout_marginTop="15dp"
+                android:background="@drawable/edit_text_box"
+                android:fontFamily="@font/myanmar_bold"
+                android:gravity="center_vertical"
+                android:hint="@string/enter_stipend_amount"
+                android:paddingVertical="5dp"
+                android:paddingStart="15dp"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="0.475"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/descriptionET" />
+
+            <EditText
+                android:id="@+id/applicationProcessET"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginHorizontal="40dp"
+                android:layout_marginTop="15dp"
+                android:background="@drawable/edit_text_box"
+                android:fontFamily="@font/myanmar_bold"
+                android:gravity="center_vertical"
+                android:hint="@string/enter_application_process"
+                android:paddingVertical="5dp"
+                android:paddingStart="15dp"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/stipendAmountET" />
+
+            <EditText
+                android:id="@+id/learningOutcomesET"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginHorizontal="40dp"
+                android:layout_marginTop="15dp"
+                android:background="@drawable/edit_text_box"
+                android:fontFamily="@font/myanmar_bold"
+                android:gravity="center_vertical"
+                android:hint="@string/enter_learning_outcomes"
+                android:paddingVertical="5dp"
+                android:paddingStart="15dp"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/applicationProcessET" />
+
+            <EditText
+                android:id="@+id/contactInformationET"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="15dp"
+                android:layout_marginHorizontal="40dp"
+                android:background="@drawable/edit_text_box"
+                android:fontFamily="@font/myanmar_bold"
+                android:gravity="center_vertical"
+                android:hint="@string/contact_information"
+                android:paddingVertical="5dp"
+                android:paddingStart="15dp"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/learningOutcomesET" />
+
+            <androidx.appcompat.widget.AppCompatButton
+                android:id="@+id/addBTN"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:background="@drawable/round_button"
+                android:backgroundTint="@color/colorB925"
+                android:paddingHorizontal="60dp"
+                android:text="@string/add"
+                android:textColor="@color/white"
+                app:layout_constraintBottom_toBottomOf="@+id/clearBTN"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="0.5"
+                app:layout_constraintStart_toEndOf="@+id/clearBTN"
+                app:layout_constraintTop_toTopOf="@+id/clearBTN" />
+
+            <androidx.appcompat.widget.AppCompatButton
+                android:id="@+id/clearBTN"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="40dp"
+                android:background="@drawable/round_button"
+                android:backgroundTint="@color/colorD9D9"
+                android:paddingHorizontal="53dp"
+                android:text="Clear"
+                android:textColor="@color/black"
+                app:layout_constraintEnd_toStartOf="@+id/addBTN"
+                app:layout_constraintHorizontal_bias="0.5"
+                app:layout_constraintHorizontal_chainStyle="spread"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/contactInformationET" />
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+    </androidx.core.widget.NestedScrollView>
+
+</androidx.constraintlayout.widget.ConstraintLayout>

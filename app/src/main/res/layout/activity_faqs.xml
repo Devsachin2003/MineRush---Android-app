@@ -1,0 +1,141 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/main"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".Activity.User.ExploreInternshipsActivity">
+
+    <!-- Top bar layout -->
+    <View
+        android:id="@+id/view1"
+        android:layout_width="match_parent"
+        android:layout_height="120dp"
+        android:background="@color/color5E31"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <ImageView
+        android:id="@+id/backIV"
+        android:layout_width="50dp"
+        android:layout_height="50dp"
+        android:layout_marginStart="20dp"
+        android:src="@drawable/back_icon"
+        app:layout_constraintBottom_toBottomOf="@+id/view1"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/exploreInternshipsTV"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="15dp"
+        android:fontFamily="@font/myanmar_regular"
+        android:gravity="center"
+        android:paddingHorizontal="20dp"
+        android:text="@string/faqs_txt"
+        android:textColor="@color/white"
+        android:textSize="30sp"
+        app:layout_constraintBottom_toBottomOf="@+id/view1"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="@+id/view1"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <!-- Scrollable content -->
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_marginTop="120dp"
+        android:fillViewport="true"
+        app:layout_constraintTop_toBottomOf="@+id/view1">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+
+            <!-- FAQ Overview -->
+            <TextView
+                android:id="@+id/faqOverviewTV"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="30dp"
+                android:fontFamily="@font/myanmar_regular"
+                android:gravity="center"
+                android:paddingHorizontal="20dp"
+                android:text="@string/faq_page_overview"
+                android:textColor="@color/black"
+                android:textSize="10sp" />
+
+            <!-- About the Chatbot Section -->
+            <TextView
+                android:id="@+id/aboutTheChatbotTV"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="10dp"
+                android:layout_marginTop="20dp"
+                android:fontFamily="@font/myanmar_regular"
+                android:gravity="center"
+                android:paddingHorizontal="20dp"
+                android:text="@string/about_the_chatbot_heading"
+                android:textColor="@color/black"
+                android:textSize="20sp" />
+
+            <androidx.recyclerview.widget.RecyclerView
+                android:id="@+id/aboutTheChatbotRV"
+                android:layout_width="match_parent"
+                android:layout_height="450dp"
+                android:layout_margin="30dp"
+                android:background="@color/colorEFC8"
+                tools:listitem="@layout/faqs_items" />
+
+            <!-- Stakeholders and Customers Section -->
+            <TextView
+                android:id="@+id/stakeholdersAndCustomersTV"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="10dp"
+                android:layout_marginTop="20dp"
+                android:fontFamily="@font/myanmar_regular"
+                android:gravity="center"
+                android:paddingHorizontal="20dp"
+                android:text="@string/stakeholders_and_customers_txt"
+                android:textColor="@color/black"
+                android:textSize="20sp" />
+
+            <androidx.recyclerview.widget.RecyclerView
+                android:id="@+id/stakeholdersAndCustomersRV"
+                android:layout_width="match_parent"
+                android:layout_height="450dp"
+                android:layout_margin="30dp"
+                android:background="@color/colorEFC8"
+                tools:listitem="@layout/faqs_items" />
+
+            <!-- Usage Chatbot Section -->
+            <TextView
+                android:id="@+id/usageChatbotTV"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="10dp"
+                android:layout_marginTop="20dp"
+                android:fontFamily="@font/myanmar_regular"
+                android:gravity="center"
+                android:paddingHorizontal="20dp"
+                android:text="@string/using_explore_internship_portal"
+                android:textColor="@color/black"
+                android:textSize="20sp" />
+
+            <androidx.recyclerview.widget.RecyclerView
+                android:id="@+id/usageChatbotRV"
+                android:layout_width="match_parent"
+                android:layout_height="450dp"
+                android:layout_margin="30dp"
+                android:background="@color/colorEFC8"
+                tools:listitem="@layout/faqs_items" />
+
+        </LinearLayout>
+    </ScrollView>
+
+</androidx.constraintlayout.widget.ConstraintLayout>

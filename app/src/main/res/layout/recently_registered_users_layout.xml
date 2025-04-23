@@ -1,0 +1,121 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="130dp"
+    android:layout_marginTop="10dp">
+
+    <View
+        android:id="@+id/userTabView"
+        android:layout_width="335dp"
+        android:layout_height="119dp"
+        android:layout_marginHorizontal="20dp"
+        android:layout_marginVertical="100dp"
+        android:background="@color/colorD9D9"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        tools:layout_editor_absoluteY="0dp" />
+
+    <androidx.appcompat.widget.AppCompatButton
+        android:id="@+id/viewUserBT"
+        android:layout_width="80dp"
+        android:layout_height="40dp"
+        android:layout_marginStart="120dp"
+        android:background="@drawable/round_button"
+        android:backgroundTint="@color/colorB925"
+        android:text="@string/view_profile"
+        android:textColor="@color/white"
+        app:layout_constraintBottom_toBottomOf="@+id/userTabView"
+        app:layout_constraintStart_toEndOf="@+id/emailTV"
+        app:layout_constraintTop_toTopOf="@+id/userTabView"
+         />
+
+    <TextView
+        android:id="@+id/textView10"
+        android:layout_width="80dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="15dp"
+        android:layout_marginStart="140dp"
+        app:layout_constraintStart_toStartOf="@+id/userTabView"
+        app:layout_constraintTop_toTopOf="@+id/userTabView" />
+
+    <ImageView
+        android:id="@+id/myProfileIV"
+        android:layout_width="50dp"
+        android:layout_height="50dp"
+        android:layout_marginLeft="20dp"
+        android:src="@drawable/my_profile"
+        app:layout_constraintBottom_toBottomOf="@+id/userTabView"
+        app:layout_constraintStart_toStartOf="@+id/userTabView"
+        app:layout_constraintTop_toTopOf="@+id/userTabView" />
+
+    <TextView
+        android:id="@+id/nameTV"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="15dp"
+        android:layout_marginStart="7dp"
+        android:text="@string/name"
+        android:textSize="13sp"
+        app:layout_constraintStart_toEndOf="@+id/myProfileIV"
+        app:layout_constraintTop_toTopOf="@+id/userTabView" />
+
+    <TextView
+        android:id="@+id/textView15"
+        android:layout_width="80dp"
+        android:layout_marginStart="140dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="5dp"
+        app:layout_constraintStart_toStartOf="@+id/userTabView"
+        app:layout_constraintTop_toBottomOf="@+id/textView10" />
+
+    <TextView
+        android:id="@+id/textView16"
+        android:layout_width="80dp"
+        android:layout_marginStart="140dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="5dp"
+        app:layout_constraintStart_toStartOf="@+id/userTabView"
+        app:layout_constraintTop_toBottomOf="@+id/textView15" />
+
+    <TextView
+        android:id="@+id/roleTV"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="7dp"
+        android:layout_marginTop="5dp"
+        android:text="@string/role_type"
+        app:layout_constraintStart_toEndOf="@+id/myProfileIV"
+        app:layout_constraintTop_toBottomOf="@+id/phoneTV" />
+
+    <TextView
+        android:layout_width="80dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="5dp"
+        android:layout_marginStart="140dp"
+        app:layout_constraintStart_toStartOf="@+id/userTabView"
+        app:layout_constraintTop_toBottomOf="@+id/textView16" />
+
+    <TextView
+        android:id="@+id/emailTV"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="7dp"
+        android:layout_marginTop="5dp"
+        android:text="@string/email_id"
+        app:layout_constraintStart_toEndOf="@+id/myProfileIV"
+        app:layout_constraintTop_toBottomOf="@+id/nameTV" />
+
+    <TextView
+        android:id="@+id/phoneTV"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="7dp"
+        android:layout_marginTop="5dp"
+        android:text="@string/phone"
+        android:textSize="13sp"
+        app:layout_constraintStart_toEndOf="@+id/myProfileIV"
+        app:layout_constraintTop_toBottomOf="@+id/emailTV" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>

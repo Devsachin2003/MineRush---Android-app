@@ -1,0 +1,355 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:fillViewport="true">
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/main"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        tools:context=".Activity.User.UserSideRulesPageActivity">
+
+        <!-- Header View -->
+        <View
+            android:id="@+id/view1"
+            android:layout_width="0dp"
+            android:layout_height="120dp"
+            android:background="@color/color5E31"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <!-- Back Icon -->
+        <ImageView
+            android:id="@+id/backIV"
+            android:layout_width="50dp"
+            android:layout_height="50dp"
+            android:layout_marginStart="20dp"
+            android:layout_marginTop="10dp"
+            android:src="@drawable/back_icon"
+            app:layout_constraintBottom_toBottomOf="@id/view1"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="@id/view1" />
+
+        <!-- Title Text -->
+        <TextView
+            android:id="@+id/instructionsNameTV"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="10dp"
+            android:layout_marginTop="15dp"
+            android:layout_marginEnd="20dp"
+            android:fontFamily="@font/myanmar_regular"
+            android:paddingHorizontal="10dp"
+            android:text="@string/rules_and_acts_txt"
+            android:textColor="@color/white"
+            android:textSize="30sp"
+            app:layout_constraintBottom_toBottomOf="@id/view1"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toEndOf="@id/backIV"
+            app:layout_constraintTop_toTopOf="@id/view1" />
+<LinearLayout
+    android:id="@+id/lay1"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:layout_marginTop="20dp"
+    android:weightSum="2"
+    app:layout_constraintTop_toBottomOf="@id/view1">
+    <androidx.cardview.widget.CardView
+        android:id="@+id/cmaCL"
+        android:layout_width="match_parent"
+        android:layout_height="130dp"
+        app:cardCornerRadius="10dp"
+        app:cardMaxElevation="5dp"
+        android:layout_weight="1"
+        app:cardBackgroundColor="@color/white">
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:layout_gravity="center"
+            android:gravity="center">
+            <ImageView
+                android:layout_width="80dp"
+                android:layout_height="80dp"
+                android:src="@drawable/cma"/>
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="10dp"
+                android:textSize="12dp"
+                android:text="@string/coal_mining_act_1952"/>
+        </LinearLayout>
+    </androidx.cardview.widget.CardView>
+
+    <androidx.cardview.widget.CardView
+        android:id="@+id/indianExplosiveActCL"
+        android:layout_width="match_parent"
+        android:layout_height="130dp"
+        app:cardCornerRadius="10dp"
+        app:cardMaxElevation="5dp"
+        android:layout_weight="1"
+        app:cardBackgroundColor="@color/white">
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:gravity="center"
+            android:layout_gravity="center">
+            <ImageView
+                android:layout_width="80dp"
+                android:layout_height="80dp"
+                android:src="@drawable/indian_explosive_act"/>
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="10dp"
+                android:textSize="12dp"
+                android:text="@string/indian_explosives_act_1884"/>
+        </LinearLayout>
+    </androidx.cardview.widget.CardView>
+
+</LinearLayout>
+
+        <LinearLayout
+            android:id="@+id/lay2"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="20dp"
+            android:weightSum="2"
+            app:layout_constraintTop_toBottomOf="@id/lay1">
+            <androidx.cardview.widget.CardView
+                android:id="@+id/ccoCL"
+                android:layout_width="match_parent"
+                android:layout_height="130dp"
+                app:cardCornerRadius="10dp"
+                app:cardMaxElevation="5dp"
+                android:layout_weight="1"
+                app:cardBackgroundColor="@color/white">
+                <LinearLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical"
+                    android:layout_gravity="center"
+                    android:gravity="center">
+                    <ImageView
+                        android:layout_width="80dp"
+                        android:layout_height="80dp"
+                        android:src="@drawable/cco"/>
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="13dp"
+                        android:textSize="12dp"
+                        android:text="@string/colliery_control_act_2000"/>
+                </LinearLayout>
+            </androidx.cardview.widget.CardView>
+
+            <androidx.cardview.widget.CardView
+                android:id="@+id/ccoaCL"
+                android:layout_width="match_parent"
+                android:layout_height="130dp"
+                app:cardCornerRadius="10dp"
+                app:cardMaxElevation="5dp"
+                android:layout_weight="1"
+                app:cardBackgroundColor="@color/white">
+                <LinearLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical"
+                    android:gravity="center"
+                    android:layout_gravity="center">
+                    <ImageView
+                        android:layout_width="80dp"
+                        android:layout_height="80dp"
+                        android:src="@drawable/ccc"/>
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="10dp"
+                        android:textSize="12dp"
+                        android:text="@string/colliery_control_order_2004"/>
+                </LinearLayout>
+            </androidx.cardview.widget.CardView>
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:id="@+id/lay3"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="20dp"
+            android:weightSum="2"
+            app:layout_constraintTop_toBottomOf="@id/lay2">
+            <androidx.cardview.widget.CardView
+                android:id="@+id/landAcquisitionActCL"
+                android:layout_width="match_parent"
+                android:layout_height="130dp"
+                app:cardCornerRadius="10dp"
+                app:cardMaxElevation="5dp"
+                android:layout_weight="1"
+                app:cardBackgroundColor="@color/white">
+                <LinearLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical"
+                    android:layout_gravity="center"
+                    android:gravity="center">
+                    <ImageView
+                        android:layout_width="80dp"
+                        android:layout_height="80dp"
+                        android:src="@drawable/land_acquisition"/>
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="10dp"
+                        android:text="@string/land_acquisition_act_1894"/>
+                </LinearLayout>
+            </androidx.cardview.widget.CardView>
+
+            <androidx.cardview.widget.CardView
+                android:id="@+id/cmrCL"
+                android:layout_width="match_parent"
+                android:layout_height="130dp"
+                app:cardCornerRadius="10dp"
+                app:cardMaxElevation="5dp"
+                android:layout_weight="1"
+                app:cardBackgroundColor="@color/white">
+                <LinearLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical"
+                    android:gravity="center"
+                    android:layout_gravity="center">
+                    <ImageView
+                        android:layout_width="80dp"
+                        android:layout_height="80dp"
+                        android:src="@drawable/cmr"/>
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="10dp"
+                        android:gravity="center"
+                        android:textSize="12dp"
+                        android:text="@string/the_coal_mines_regulations_2017"/>
+                </LinearLayout>
+            </androidx.cardview.widget.CardView>
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:id="@+id/lay4"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="20dp"
+            android:weightSum="2"
+            app:layout_constraintTop_toBottomOf="@id/lay3">
+            <androidx.cardview.widget.CardView
+                android:id="@+id/paymentOfWagesCL"
+                android:layout_width="match_parent"
+                android:layout_height="130dp"
+                app:cardCornerRadius="10dp"
+                app:cardMaxElevation="5dp"
+                android:layout_weight="1"
+                app:cardBackgroundColor="@color/white">
+                <LinearLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical"
+                    android:layout_gravity="center"
+                    android:gravity="center">
+                    <ImageView
+                        android:layout_width="80dp"
+                        android:layout_height="80dp"
+                        android:src="@drawable/payment_of_wages"/>
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="10dp"
+                        android:text="@string/payment_of_wages_act_1956"/>
+                </LinearLayout>
+            </androidx.cardview.widget.CardView>
+
+            <androidx.cardview.widget.CardView
+                android:id="@+id/cbaCL"
+                android:layout_width="match_parent"
+                android:layout_height="130dp"
+                app:cardCornerRadius="10dp"
+                app:cardMaxElevation="5dp"
+                android:layout_weight="1"
+                app:cardBackgroundColor="@color/white">
+                <LinearLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical"
+                    android:gravity="center"
+                    android:layout_gravity="center">
+                    <ImageView
+                        android:layout_width="80dp"
+                        android:layout_height="80dp"
+                        android:src="@drawable/cba"/>
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="10dp"
+                        android:text="@string/coal_bearing_act_1957"/>
+                </LinearLayout>
+            </androidx.cardview.widget.CardView>
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:id="@+id/lay5"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="20dp"
+            android:weightSum="2"
+            app:layout_constraintTop_toBottomOf="@id/lay4">
+            <androidx.cardview.widget.CardView
+                android:id="@+id/randActCL"
+                android:layout_width="match_parent"
+                android:layout_height="130dp"
+                app:cardCornerRadius="10dp"
+                app:cardMaxElevation="5dp"
+                android:layout_weight="1"
+                app:cardBackgroundColor="@color/white">
+                <LinearLayout
+                    android:layout_width="200dp"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical"
+                    android:layout_gravity="center"
+                    android:gravity="center">
+                    <ImageView
+                        android:layout_width="80dp"
+                        android:layout_height="80dp"
+                        android:src="@drawable/randr"/>
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="10dp"
+                        android:text="@string/r_r_act_2013"/>
+                </LinearLayout>
+            </androidx.cardview.widget.CardView>
+
+            <androidx.cardview.widget.CardView
+                android:layout_width="match_parent"
+                android:layout_height="130dp"
+                app:cardCornerRadius="10dp"
+                app:cardMaxElevation="5dp"
+                android:layout_weight="1"
+                app:cardBackgroundColor="@color/white">
+
+            </androidx.cardview.widget.CardView>
+
+        </LinearLayout>
+        
+
+
+
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</ScrollView>
