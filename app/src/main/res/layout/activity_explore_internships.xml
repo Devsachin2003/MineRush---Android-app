@@ -5,103 +5,113 @@
     android:id="@+id/main"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".Activity.User.ExploreInternshipsActivity">
+    tools:context=".User.ExploreInternshipsActivity">
 
     <View
         android:id="@+id/view1"
         android:layout_width="match_parent"
         android:layout_height="120dp"
         android:background="@color/color5E31"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
+
     <ImageView
         android:id="@+id/backIV"
         android:layout_width="50dp"
         android:layout_height="50dp"
         android:layout_marginStart="20dp"
+        android:layout_marginTop="20dp"
         android:src="@drawable/back_icon"
-        app:layout_constraintBottom_toBottomOf="@+id/view1"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
-
     <TextView
         android:id="@+id/exploreInternshipsTV"
-        android:layout_width="wrap_content"
+        android:layout_width="0dp"
         android:layout_height="wrap_content"
-        android:layout_marginTop="15dp"
+        android:layout_marginStart="10dp"
+        android:layout_marginTop="25dp"
+        android:layout_marginEnd="20dp"
         android:fontFamily="@font/myanmar_regular"
-        android:paddingHorizontal="20dp"
         android:text="@string/explore_internships"
         android:textColor="@color/white"
         android:textSize="30sp"
-        app:layout_constraintBottom_toBottomOf="@+id/view1"
+        android:gravity="center_vertical"
+        app:layout_constraintStart_toEndOf="@id/backIV"
+        app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toEndOf="@+id/backIV"
-        app:layout_constraintTop_toTopOf="parent" />
+        app:layout_constraintBottom_toBottomOf="@id/view1" />
 
     <TextView
         android:id="@+id/welcomeToMiningIndustryTV"
-        android:layout_width="wrap_content"
+        android:layout_width="0dp"
         android:layout_height="wrap_content"
+        android:layout_marginTop="20dp"
         android:fontFamily="@font/myanmar_regular"
         android:paddingHorizontal="20dp"
         android:text="@string/welcome_to_mining_industry_internship_assistance_tv"
         android:textColor="@color/black"
+        android:textSize="22sp"
         android:gravity="center"
-        android:textSize="25sp"
-        android:layout_marginTop="30dp"
-        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/view1"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/view1" />
+        app:layout_constraintEnd_toEndOf="parent" />
 
-
-    <SearchView
+    <androidx.appcompat.widget.SearchView
         android:id="@+id/searchView"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
+        android:layout_marginTop="20dp"
         android:layout_marginStart="20dp"
         android:layout_marginEnd="20dp"
         android:iconifiedByDefault="false"
         android:queryHint="Enter Keyword"
-        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/welcomeToMiningIndustryTV"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/welcomeToMiningIndustryTV" />
+        app:layout_constraintEnd_toEndOf="parent" />
 
-    <Spinner
-        android:id="@+id/locationDropdownMenu"
-        android:layout_width="0dp"
-        android:layout_height="wrap_content"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        android:layout_marginTop="20dp"
-        android:layout_marginStart="20dp"
-        android:layout_marginEnd="210dp"
-        app:layout_constraintTop_toBottomOf="@+id/searchView" />
-
-    <Spinner
-        android:id="@+id/InternshipTypeDropdownMenu"
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/spinnerLayout"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:layout_marginTop="20dp"
-        android:layout_marginStart="10dp"
-        android:layout_marginEnd="20dp"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toEndOf="@+id/locationDropdownMenu"
-        app:layout_constraintTop_toBottomOf="@+id/searchView" />
+        app:layout_constraintTop_toBottomOf="@id/searchView"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent">
+
+        <Spinner
+            android:id="@+id/locationDropdownMenu"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginEnd="8dp"
+            app:layout_constraintEnd_toStartOf="@+id/InternshipTypeDropdownMenu"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintBottom_toBottomOf="parent"/>
+
+        <Spinner
+            android:id="@+id/InternshipTypeDropdownMenu"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="8dp"
+            app:layout_constraintStart_toEndOf="@id/locationDropdownMenu"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintBottom_toBottomOf="parent"/>
+    </androidx.constraintlayout.widget.ConstraintLayout>
 
     <androidx.recyclerview.widget.RecyclerView
         android:id="@+id/InternshipRV"
-        android:layout_width="match_parent"
-        android:layout_height="450dp"
-        android:layout_margin="30dp"
-        tools:listitem="@layout/recently_registered_users_layout"
-        android:layout_marginTop="30dp"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:layout_marginTop="20dp"
+        android:layout_marginStart="20dp"
+        android:layout_marginEnd="20dp"
+        android:layout_marginBottom="20dp"
         android:background="@color/colorEFC8"
-        app:layout_constraintEnd_toEndOf="parent"
+        tools:listitem="@layout/internship_detail_layout"
+        app:layout_constraintTop_toBottomOf="@id/spinnerLayout"
+        app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/locationDropdownMenu" />
-
+        app:layout_constraintEnd_toEndOf="parent" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

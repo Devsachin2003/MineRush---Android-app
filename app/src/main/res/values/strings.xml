@@ -136,9 +136,9 @@
     </string-array>
     <string name="location">Location</string>
     <string-array name="locations">
-        <item>Mangalore</item>
+        <item>Dhanbad</item>
         <item>Neyveli</item>
-        <item>Singarameni</item>
+        <item>Singareni</item>
     </string-array>
 
     <string-array name="faq_types">
@@ -263,6 +263,20 @@ This app provides general information and tools for stakeholders and customers i
     <string name="phone_value">phone_no</string>
     <string name="role_value">role_type</string>
     <string name="organization_value">organization_value</string>
+    <string name="internshiptitle">InternshipTitle</string>
+    <string name="nametxt">Name</string>
+    <string name="gendertxt">Gender</string>
+    <string name="date_of_birthTxt">Date of birth</string>
+    <string name="phoneTxt">Phone</string>
+    <string name="emailTxt">Email</string>
+    <string name="branchTxt">Branch</string>
+    <string name="year_of_study_Txt">Year of study</string>
+    <string name="skillsTxt">Skills</string>
+    <string-array name="gender_array">
+        <item>Male</item>
+        <item>Female</item>
+        <item>Other</item>
+    </string-array>
 
 
 </resources>

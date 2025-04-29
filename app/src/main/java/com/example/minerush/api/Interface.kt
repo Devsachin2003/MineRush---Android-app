@@ -2,7 +2,12 @@ package com.example.minerush.api
 
 import com.android.lawbot.DataClasses.ChatRequest
 import com.android.lawbot.DataClasses.ChatResponse
+import com.example.minerush.DataClass.ExploreInternData
+import com.example.minerush.DataClass.FaqsResponse
+import com.example.minerush.DataClass.GlossaryResponse
+import com.example.minerush.DataClass.InternshipResponse
 import com.example.minerush.DataClass.RulesResponse
+import com.example.minerush.DataClass.UserMyProfileData
 import com.example.minerush.User.user_ui.user_profile.UserMyProfileFragment
 import com.example.minerush.api.serverresponse.LoginResponse
 import com.example.minerush.api.serverresponse.SignUpResponse
@@ -11,9 +16,11 @@ import retrofit2.http.Body
 import retrofit2.http.Field
 import retrofit2.http.FormUrlEncoded
 import retrofit2.http.GET
+import retrofit2.http.Header
 import retrofit2.http.Headers
 import retrofit2.http.POST
 import retrofit2.http.Path
+import retrofit2.http.Query
 
 interface ApiService {
 
@@ -46,9 +53,18 @@ interface ApiService {
     ): Call<SignUpResponse>
 
     // ✅ Get user profile (you can update return type if not correct)
-    @GET("getUserProfile")
-    suspend fun getUserProfile(): UserMyProfileFragment
+    @GET("Myprofile")
+    fun getUserProfile(@Query("email") email: String): Call<UserMyProfileData>
 
-    @GET("/{id}")
+    @GET("{id}")
     fun getRule(@Path("id") id: String): Call<RulesResponse>
+
+    @GET("Explore_internships")
+    fun getInternships(): Call<InternshipResponse>
+
+    @GET("/FAQs")
+    fun getFaqs(): Call<FaqsResponse>
+
+    @GET("Displayglossary")
+    fun getGlossary(): Call<GlossaryResponse>
 }

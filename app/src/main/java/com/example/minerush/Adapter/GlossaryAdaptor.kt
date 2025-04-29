@@ -39,8 +39,8 @@ class GlossaryAdaptor(private val userList: ArrayList<GlossaryData>) : RecyclerV
         val currentItem = userList[position]
 
         // Set text for each field
-        holder.glossaryTermTV.text = currentItem.termTV
-        holder.definitionTV.text = currentItem.definitionTV
+        holder.glossaryTermTV.text = currentItem.term
+        holder.definitionTV.text = currentItem.definition
 
         // Set visibility based on isExpanded state
         holder.expandLay.visibility = if (currentItem.isExpanded) View.VISIBLE else View.GONE
@@ -66,4 +66,7 @@ class GlossaryAdaptor(private val userList: ArrayList<GlossaryData>) : RecyclerV
     }
 
     override fun getItemCount() = userList.size
+    fun notifyItemChanged(glossaryList: ArrayList<GlossaryData>) {
+
+    }
 }

@@ -5,146 +5,108 @@ import android.os.Bundle
 import android.view.View
 import android.widget.AdapterView
 import android.widget.ArrayAdapter
-import android.widget.Spinner
+import android.widget.Toast
 import androidx.activity.enableEdgeToEdge
 import androidx.appcompat.app.AppCompatActivity
 import androidx.recyclerview.widget.LinearLayoutManager
 import com.android.minerush.ExploreInternshipAdaptor
 import com.example.minerush.DataClass.ExploreInternData
+import com.example.minerush.DataClass.InternshipResponse
 import com.example.minerush.R
+import com.example.minerush.api.RetrofitClient
 import com.example.minerush.databinding.ActivityExploreInternshipsBinding
+import retrofit2.Call
+import retrofit2.Callback
+import retrofit2.Response
 
 class ExploreInternshipsActivity : AppCompatActivity() {
     private lateinit var binding: ActivityExploreInternshipsBinding
     private var internships = ArrayList<ExploreInternData>()
+    private lateinit var adapter: ExploreInternshipAdaptor
+
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         enableEdgeToEdge()
         binding = ActivityExploreInternshipsBinding.inflate(layoutInflater)
         setContentView(binding.root)
 
-        // Set up the SearchView
-//        setupSearchView()
-        redirects()
-        setData()
-        setAdapter()
-        // Set up the Spinner
-        setupSpinner()
+        setupRecyclerView()
+        setupSpinners()
+        setupListeners()
+        fetchInternshipsFromAPI()
     }
 
-    /*private fun setupSearchView() {
-        binding.searchView.setOnQueryTextListener(object : SearchView.OnQueryTextListener {
-            override fun onQueryTextSubmit(query: String?): Boolean {
-                // Handle the search query submission
-                if (!query.isNullOrEmpty()) {
-                    // Implement your search logic here, e.g., filtering a list
-                    // Example: filterInternshipList(query)
-                }
-                return true
-            }
+    private fun setupRecyclerView() {
+        binding.InternshipRV.layoutManager = LinearLayoutManager(this)
+        adapter = ExploreInternshipAdaptor(internships)
+        binding.InternshipRV.adapter = adapter
 
-            override fun onQueryTextChange(newText: String?): Boolean {
-                // Handle text changes in the search bar for live filtering
-                if (!newText.isNullOrEmpty()) {
-                    // Implement your live filtering logic here
-                    // Example: filterInternshipList(newText)
-                } else {
-                    // Reset the filter if the search query is empty
-                    // Example: resetInternshipList()
-                }
-                return true
+        adapter.setClickListeners(object : ExploreInternshipAdaptor.OnItemClickListeners {
+            override fun onClick(article: ExploreInternData, position: Int) {
+                val intent = Intent(
+                    this@ExploreInternshipsActivity,
+                    ApplicationFormActivity::class.java
+                )
+                startActivity(intent)
             }
         })
-    }*/
-
-    private fun setData() {
-        internships.add(ExploreInternData("internshipRole", "companyName","location", "mode","description"))
-        internships.add(ExploreInternData("internshipRole1", "companyName","location", "mode","description"))
-        internships.add(ExploreInternData("internshipRole2", "companyName","location", "mode","description"))
-        internships.add(ExploreInternData("internshipRole3", "companyName","location", "mode","description"))
-        internships.add(ExploreInternData("internshipRole4", "companyName","location", "mode","description"))
-
     }
 
-    private fun setupSpinner() {
-        val spinner: Spinner = binding.InternshipTypeDropdownMenu
-        // Create an ArrayAdapter using the string array and a default spinner layout
-        ArrayAdapter.createFromResource(
+    private fun setupSpinners() {
+        val internshipTypeAdapter = ArrayAdapter.createFromResource(
             this,
-            R.array.internship_type,  // Ensure this array is defined in strings.xml
+            R.array.internship_type,
             android.R.layout.simple_spinner_item
-        ).also { adapter ->
-            // Specify the layout to use when the list of choices appears
-            adapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item)
-            // Apply the adapter to the spinner
-            spinner.adapter = adapter
-        }
+        )
+        internshipTypeAdapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item)
+        binding.InternshipTypeDropdownMenu.adapter = internshipTypeAdapter
 
-        // Set the listener for item selection
-        spinner.onItemSelectedListener = object : AdapterView.OnItemSelectedListener {
-            override fun onItemSelected(
-                parent: AdapterView<*>,
-                view: View,
-                position: Int,
-                id: Long
-            ) {
-                // Get the selected item
-                val selectedItem = parent.getItemAtPosition(position).toString()
-                // Handle the selection (e.g., update UI or perform an action)
+        binding.InternshipTypeDropdownMenu.onItemSelectedListener = object : AdapterView.OnItemSelectedListener {
+            override fun onItemSelected(parent: AdapterView<*>, view: View, position: Int, id: Long) {
+                // You can filter your internships list based on type if needed
             }
 
-            override fun onNothingSelected(parent: AdapterView<*>) {
-                // Handle the case where no item is selected, if needed
-            }
+            override fun onNothingSelected(parent: AdapterView<*>) {}
         }
 
-        val spinner2: Spinner = binding.locationDropdownMenu // Ensure you have a second Spinner in your layout
-        ArrayAdapter.createFromResource(
+        val locationAdapter = ArrayAdapter.createFromResource(
             this,
-            R.array.locations,  // Define this array in strings.xml for the second spinner
+            R.array.locations,
             android.R.layout.simple_spinner_item
-        ).also { adapter ->
-            adapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item)
-            spinner2.adapter = adapter
-        }
+        )
+        locationAdapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item)
+        binding.locationDropdownMenu.adapter = locationAdapter
 
-        // Set the listener for the second spinner
-        spinner2.onItemSelectedListener = object : AdapterView.OnItemSelectedListener {
-            override fun onItemSelected(
-                parent: AdapterView<*>,
-                view: View,
-                position: Int,
-                id: Long
-            ) {
-                val selectedItem = parent.getItemAtPosition(position).toString()
-                // Handle selection of second spinner
+        binding.locationDropdownMenu.onItemSelectedListener = object : AdapterView.OnItemSelectedListener {
+            override fun onItemSelected(parent: AdapterView<*>, view: View, position: Int, id: Long) {
+                // You can filter internships based on location if needed
             }
 
-            override fun onNothingSelected(parent: AdapterView<*>) {
-                // Handle the case where nothing is selected in the second spinner
-            }
+            override fun onNothingSelected(parent: AdapterView<*>) {}
         }
     }
 
-
-    private fun redirects() {
+    private fun setupListeners() {
         binding.backIV.setOnClickListener {
             finish()
         }
     }
 
-    private fun setAdapter() {
-            binding.InternshipRV.layoutManager = LinearLayoutManager(this)
-            val adapter = ExploreInternshipAdaptor(internships)
-            binding.InternshipRV.adapter = adapter
-            adapter.setClickListeners(object : ExploreInternshipAdaptor.OnItemClickListeners {
-                override fun onClick(article: ExploreInternData, position: Int) {
-                    val intent = Intent(
-                        this@ExploreInternshipsActivity,
-                        ApplicationFormActivity::class.java
-                    )
-                    startActivity(intent)
+    private fun fetchInternshipsFromAPI() {
+        RetrofitClient.instance.getInternships().enqueue(object : Callback<InternshipResponse> {
+            override fun onResponse(call: Call<InternshipResponse>, response: Response<InternshipResponse>) {
+                if (response.isSuccessful && response.body() != null) {
+                    internships.clear()
+                    internships.addAll(response.body()!!.internships)
+                    adapter.notifyDataSetChanged()
+                } else {
+                    Toast.makeText(this@ExploreInternshipsActivity, "No internships found", Toast.LENGTH_SHORT).show()
                 }
-            })
-        }
+            }
+
+            override fun onFailure(call: Call<InternshipResponse>, t: Throwable) {
+                Toast.makeText(this@ExploreInternshipsActivity, "Error: ${t.message}", Toast.LENGTH_SHORT).show()
+            }
+        })
+    }
 }

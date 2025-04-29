@@ -10,9 +10,13 @@ import androidx.activity.enableEdgeToEdge
 import androidx.appcompat.app.AppCompatActivity
 import com.example.minerush.DataClass.RulesData
 import com.example.minerush.DataClass.RulesResponse
+import com.example.minerush.R
+import coil.load
+import com.bumptech.glide.Glide
 import com.example.minerush.api.RetrofitClient
 import com.example.minerush.databinding.ActivityEachRulePageBinding
 import retrofit2.*
+
 
 class EachRulePageActivity : AppCompatActivity() {
 
@@ -64,13 +68,17 @@ class EachRulePageActivity : AppCompatActivity() {
         binding.descriptionText.text = rule.description
 
 
-    //    try {
-//            val decodedBytes = Base64.decode(rule.image, Base64.DEFAULT)
-//            val bitmap = BitmapFactory.decodeByteArray(decodedBytes, 0, decodedBytes.size)
-//            binding.mediaImageView.setImageBitmap(bitmap)
-  //      } catch (e: Exception) {
-     //       Log.e("EachRulePageActivity", "Image decoding failed", e)
-       // }
+//        rule.image?.let {
+//            // Coil will handle loading the image into the ImageView
+//            binding.mediaImageView.load(it) {
+//                crossfade(true) // Optional: Add a crossfade effect while loading
+//                placeholder(R.drawable.placeholder_image) // Optional: Placeholder while loading
+//                error(R.drawable.error_image) // Optional: Error image if loading fails
+//            }
+//        }
+
+        Glide.with(this).load(rule.image).error(R.drawable.indian_explosive_act).into(binding.mediaImageView)
+
 
         binding.viewPdfButton.setOnClickListener {
             try {

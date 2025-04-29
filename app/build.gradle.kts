@@ -57,7 +57,7 @@ dependencies {
     implementation(libs.logging.interceptor)
     implementation (libs.firebase.firestore.ktx)
     implementation (libs.firebase.auth.ktx)
-
+    implementation ("io.coil-kt:coil:2.1.0")
     implementation(libs.androidx.core.ktx)
     implementation(libs.androidx.lifecycle.runtime.ktx)
     implementation(libs.androidx.activity.compose)
@@ -82,6 +82,8 @@ dependencies {
     debugImplementation(libs.androidx.ui.tooling)
     debugImplementation(libs.androidx.ui.test.manifest)
     implementation(libs.androidx.recyclerview)
+    implementation("com.github.bumptech.glide:glide:4.16.0")
+    annotationProcessor("com.github.bumptech.glide:compiler:4.16.0")
     implementation (libs.material.v130alpha03);
     implementation (libs.androidx.drawerlayout)
     testImplementation(libs.junit)

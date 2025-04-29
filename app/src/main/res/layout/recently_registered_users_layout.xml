@@ -32,7 +32,7 @@
          />
 
     <TextView
-        android:id="@+id/textView10"
+        android:id="@+id/nameDisplayTV"
         android:layout_width="80dp"
         android:layout_height="wrap_content"
         android:layout_marginTop="15dp"
@@ -62,22 +62,22 @@
         app:layout_constraintTop_toTopOf="@+id/userTabView" />
 
     <TextView
-        android:id="@+id/textView15"
+        android:id="@+id/emailDisplayTV"
         android:layout_width="80dp"
         android:layout_marginStart="140dp"
         android:layout_height="wrap_content"
         android:layout_marginTop="5dp"
         app:layout_constraintStart_toStartOf="@+id/userTabView"
-        app:layout_constraintTop_toBottomOf="@+id/textView10" />
+        app:layout_constraintTop_toBottomOf="@+id/nameDisplayTV" />
 
     <TextView
-        android:id="@+id/textView16"
+        android:id="@+id/phoneDisplayTV"
         android:layout_width="80dp"
         android:layout_marginStart="140dp"
         android:layout_height="wrap_content"
         android:layout_marginTop="5dp"
         app:layout_constraintStart_toStartOf="@+id/userTabView"
-        app:layout_constraintTop_toBottomOf="@+id/textView15" />
+        app:layout_constraintTop_toBottomOf="@+id/emailDisplayTV" />
 
     <TextView
         android:id="@+id/roleTV"
@@ -90,12 +90,13 @@
         app:layout_constraintTop_toBottomOf="@+id/phoneTV" />
 
     <TextView
+        android:id="@+id/roleDisplayTV"
         android:layout_width="80dp"
         android:layout_height="wrap_content"
         android:layout_marginTop="5dp"
         android:layout_marginStart="140dp"
         app:layout_constraintStart_toStartOf="@+id/userTabView"
-        app:layout_constraintTop_toBottomOf="@+id/textView16" />
+        app:layout_constraintTop_toBottomOf="@+id/phoneDisplayTV" />
 
     <TextView
         android:id="@+id/emailTV"

@@ -1,5 +1,6 @@
 package com.example.minerush
 
+import android.content.Context
 import android.content.Intent
 import android.os.Bundle
 import android.util.Log
@@ -67,6 +68,8 @@ class LoginActivity : AppCompatActivity() {
                                 return
                             }
                         }
+                        val sharedPref = getSharedPreferences("user_session", Context.MODE_PRIVATE)
+                        sharedPref.edit().putString("email", email).apply()
                         startActivity(intent)
                     }
                 } else {

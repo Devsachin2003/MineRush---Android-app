@@ -39,8 +39,8 @@ class FaqsAboutTheChatAdaptor(private val userList: ArrayList<FaqsData>) : Recyc
         val currentItem = userList[position]
 
         // Set text for each field
-        holder.faqQuestionTV.text = currentItem.questionTV
-        holder.answerTV.text = currentItem.answerTV
+        holder.faqQuestionTV.text = currentItem.question
+        holder.answerTV.text = currentItem.answer
 
         // Set visibility based on isExpanded state
         holder.expandLay.visibility = if (currentItem.isExpanded) View.VISIBLE else View.GONE

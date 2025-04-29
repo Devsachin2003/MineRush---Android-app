@@ -19,7 +19,8 @@ class ExploreInternshipAdaptor(private val userList: ArrayList<ExploreInternData
         val internshipRoleTV: TextView = itemView.findViewById(R.id.jobTitle)
         val companyNameTV: TextView = itemView.findViewById(R.id.txtCompanyName)
         val locationTV: TextView = itemView.findViewById(R.id.txtLocation)
-        val modeTV: TextView = itemView.findViewById(R.id.txtType)
+        val modeTV: TextView = itemView.findViewById(R.id.modeType)
+        val durationTV: TextView=itemView.findViewById((R.id.durationTV))
         val descriptionTV: TextView = itemView.findViewById(R.id.txtDescription)
         val applyBT: Button = itemView.findViewById(R.id.btnApply)
         val up: ImageView = itemView.findViewById(R.id.uparrow)
@@ -44,11 +45,12 @@ class ExploreInternshipAdaptor(private val userList: ArrayList<ExploreInternData
         val currentItem = userList[position]
 
         // Set text for each field
-        holder.internshipRoleTV.text = currentItem.internRoleTV
-        holder.companyNameTV.text = currentItem.companyNameTV
-        holder.locationTV.text = currentItem.locationTV
-        holder.modeTV.text = currentItem.modeTV
-        holder.descriptionTV.text = currentItem.descriptionTV
+        holder.internshipRoleTV.text = currentItem.title
+        holder.companyNameTV.text = currentItem.company
+        holder.locationTV.text = currentItem.location
+        holder.modeTV.text = currentItem.mode
+        holder.durationTV.text = currentItem.duration
+        holder.descriptionTV.text = currentItem.description
 
         // Apply button click listener
         holder.applyBT.setOnClickListener {

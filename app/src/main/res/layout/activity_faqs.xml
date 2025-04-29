@@ -5,7 +5,7 @@
     android:id="@+id/main"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".Activity.User.ExploreInternshipsActivity">
+    tools:context=".User.ExploreInternshipsActivity">
 
     <!-- Top bar layout -->
     <View
@@ -83,15 +83,18 @@
                 android:textColor="@color/black"
                 android:textSize="20sp" />
 
+            <!-- Stakeholders and Customers Section -->
             <androidx.recyclerview.widget.RecyclerView
                 android:id="@+id/aboutTheChatbotRV"
                 android:layout_width="match_parent"
-                android:layout_height="450dp"
+                android:layout_height="wrap_content"
                 android:layout_margin="30dp"
                 android:background="@color/colorEFC8"
+                app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
+                android:orientation="vertical"
+                tools:itemCount="3"
                 tools:listitem="@layout/faqs_items" />
 
-            <!-- Stakeholders and Customers Section -->
             <TextView
                 android:id="@+id/stakeholdersAndCustomersTV"
                 android:layout_width="wrap_content"
@@ -108,8 +111,11 @@
             <androidx.recyclerview.widget.RecyclerView
                 android:id="@+id/stakeholdersAndCustomersRV"
                 android:layout_width="match_parent"
-                android:layout_height="450dp"
+                android:layout_height="wrap_content"
                 android:layout_margin="30dp"
+                app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
+                android:orientation="vertical"
+                tools:itemCount="3"
                 android:background="@color/colorEFC8"
                 tools:listitem="@layout/faqs_items" />
 
@@ -130,9 +136,11 @@
             <androidx.recyclerview.widget.RecyclerView
                 android:id="@+id/usageChatbotRV"
                 android:layout_width="match_parent"
-                android:layout_height="450dp"
+                android:layout_height="wrap_content"
+                tools:itemCount="3"
+                app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
+                android:orientation="vertical"
                 android:layout_margin="30dp"
-                android:background="@color/colorEFC8"
                 tools:listitem="@layout/faqs_items" />
 
         </LinearLayout>
