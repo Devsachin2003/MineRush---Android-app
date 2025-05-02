@@ -1,3 +1,6 @@
 package com.example.minerush.api.serverresponse
 
- class ApiResponse{}
+data class ApiResponse(
+ val message: String,
+ val status: Int
+)

@@ -3,7 +3,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".Activity.Admin.ManageUsersActivity">
+    tools:context=".Admin.ManageUsersActivity">
 
     <RelativeLayout
         android:id="@+id/header"
@@ -32,7 +32,7 @@
             android:layout_centerInParent="true"/>
     </RelativeLayout>
 
-    <SearchView
+    <androidx.appcompat.widget.SearchView
         android:id="@+id/searchView"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"

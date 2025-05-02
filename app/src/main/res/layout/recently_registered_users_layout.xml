@@ -8,115 +8,120 @@
 
     <View
         android:id="@+id/userTabView"
-        android:layout_width="335dp"
+        android:layout_width="0dp"
         android:layout_height="119dp"
         android:layout_marginHorizontal="20dp"
-        android:layout_marginVertical="100dp"
         android:background="@color/colorD9D9"
-        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        tools:layout_editor_absoluteY="0dp" />
-
-    <androidx.appcompat.widget.AppCompatButton
-        android:id="@+id/viewUserBT"
-        android:layout_width="80dp"
-        android:layout_height="40dp"
-        android:layout_marginStart="120dp"
-        android:background="@drawable/round_button"
-        android:backgroundTint="@color/colorB925"
-        android:text="@string/view_profile"
-        android:textColor="@color/white"
-        app:layout_constraintBottom_toBottomOf="@+id/userTabView"
-        app:layout_constraintStart_toEndOf="@+id/emailTV"
-        app:layout_constraintTop_toTopOf="@+id/userTabView"
-         />
-
-    <TextView
-        android:id="@+id/nameDisplayTV"
-        android:layout_width="80dp"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="15dp"
-        android:layout_marginStart="140dp"
-        app:layout_constraintStart_toStartOf="@+id/userTabView"
-        app:layout_constraintTop_toTopOf="@+id/userTabView" />
+        app:layout_constraintEnd_toEndOf="parent" />
 
     <ImageView
         android:id="@+id/myProfileIV"
         android:layout_width="50dp"
         android:layout_height="50dp"
-        android:layout_marginLeft="20dp"
+        android:layout_marginStart="20dp"
+        android:layout_marginTop="15dp"
         android:src="@drawable/my_profile"
-        app:layout_constraintBottom_toBottomOf="@+id/userTabView"
         app:layout_constraintStart_toStartOf="@+id/userTabView"
         app:layout_constraintTop_toTopOf="@+id/userTabView" />
 
+    <!-- Name -->
     <TextView
         android:id="@+id/nameTV"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="15dp"
-        android:layout_marginStart="7dp"
         android:text="@string/name"
         android:textSize="13sp"
+        android:layout_marginTop="15dp"
+        android:layout_marginStart="7dp"
         app:layout_constraintStart_toEndOf="@+id/myProfileIV"
         app:layout_constraintTop_toTopOf="@+id/userTabView" />
 
     <TextView
-        android:id="@+id/emailDisplayTV"
-        android:layout_width="80dp"
-        android:layout_marginStart="140dp"
+        android:id="@+id/nameDisplayTV"
+        android:layout_width="0dp"
         android:layout_height="wrap_content"
-        android:layout_marginTop="5dp"
-        app:layout_constraintStart_toStartOf="@+id/userTabView"
-        app:layout_constraintTop_toBottomOf="@+id/nameDisplayTV" />
+        android:text="John Doe"
+        android:layout_marginStart="8dp"
+        app:layout_constraintStart_toEndOf="@+id/nameTV"
+        app:layout_constraintTop_toTopOf="@+id/nameTV"
+        app:layout_constraintEnd_toEndOf="@+id/userTabView" />
 
-    <TextView
-        android:id="@+id/phoneDisplayTV"
-        android:layout_width="80dp"
-        android:layout_marginStart="140dp"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="5dp"
-        app:layout_constraintStart_toStartOf="@+id/userTabView"
-        app:layout_constraintTop_toBottomOf="@+id/emailDisplayTV" />
-
-    <TextView
-        android:id="@+id/roleTV"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="7dp"
-        android:layout_marginTop="5dp"
-        android:text="@string/role_type"
-        app:layout_constraintStart_toEndOf="@+id/myProfileIV"
-        app:layout_constraintTop_toBottomOf="@+id/phoneTV" />
-
-    <TextView
-        android:id="@+id/roleDisplayTV"
-        android:layout_width="80dp"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="5dp"
-        android:layout_marginStart="140dp"
-        app:layout_constraintStart_toStartOf="@+id/userTabView"
-        app:layout_constraintTop_toBottomOf="@+id/phoneDisplayTV" />
-
+    <!-- Email -->
     <TextView
         android:id="@+id/emailTV"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:text="@string/email_id"
         android:layout_marginStart="7dp"
         android:layout_marginTop="5dp"
-        android:text="@string/email_id"
         app:layout_constraintStart_toEndOf="@+id/myProfileIV"
         app:layout_constraintTop_toBottomOf="@+id/nameTV" />
 
     <TextView
+        android:id="@+id/emailDisplayTV"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:text="example@mail.com"
+        android:layout_marginStart="8dp"
+        app:layout_constraintStart_toEndOf="@+id/emailTV"
+        app:layout_constraintTop_toTopOf="@+id/emailTV"
+        app:layout_constraintEnd_toEndOf="@+id/userTabView" />
+
+    <!-- Phone -->
+    <TextView
         android:id="@+id/phoneTV"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginStart="7dp"
-        android:layout_marginTop="5dp"
         android:text="@string/phone"
         android:textSize="13sp"
+        android:layout_marginTop="5dp"
+        android:layout_marginStart="7dp"
         app:layout_constraintStart_toEndOf="@+id/myProfileIV"
         app:layout_constraintTop_toBottomOf="@+id/emailTV" />
+
+    <TextView
+        android:id="@+id/phoneDisplayTV"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:text="1234567890"
+        android:layout_marginStart="8dp"
+        app:layout_constraintStart_toEndOf="@+id/phoneTV"
+        app:layout_constraintTop_toTopOf="@+id/phoneTV"
+        app:layout_constraintEnd_toEndOf="@+id/userTabView" />
+
+    <!-- Role -->
+    <TextView
+        android:id="@+id/roleTV"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/role_type"
+        android:layout_marginStart="7dp"
+        android:layout_marginTop="5dp"
+        app:layout_constraintStart_toEndOf="@+id/myProfileIV"
+        app:layout_constraintTop_toBottomOf="@+id/phoneTV" />
+
+    <TextView
+        android:id="@+id/userRoleDisplayTV"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:text="Student"
+        android:layout_marginStart="8dp"
+        app:layout_constraintStart_toEndOf="@+id/roleTV"
+        app:layout_constraintTop_toTopOf="@+id/roleTV"
+        app:layout_constraintEnd_toEndOf="@+id/userTabView" />
+
+    <!-- Centered ProgressBar -->
+    <ProgressBar
+        android:id="@+id/progressBar"
+        style="?android:attr/progressBarStyleLarge"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:visibility="gone"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

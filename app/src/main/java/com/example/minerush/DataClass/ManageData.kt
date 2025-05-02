@@ -1,3 +1,16 @@
 package com.example.minerush.DataClass
 
-data class ManageData(val usernameTV: String, val roleTV: String, val emailTV: String, val passwordTV: String)
+import com.google.gson.annotations.SerializedName
+
+data class ManageData(
+    @SerializedName("usernameTV") val nameTV: String,
+    @SerializedName("roleTV") val roleTV: String,
+    @SerializedName("emailTV") val emailTV: String,
+    @SerializedName("phoneTV") val phoneTV: String
+)
+
+data class ManageUsersResponse(
+    val message: String,
+    val status: Int,
+    val data: List<ManageData>
+)

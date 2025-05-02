@@ -11,39 +11,40 @@ import com.example.minerush.R
 
 class UserAdapter(private val articleList: ArrayList<ManageData>) : RecyclerView.Adapter<UserAdapter.ArticleViewHolder>() {
 
-    private var onItemClickListner:OnItemClickListeners? = null
+    private var onItemClickListener: OnItemClickListeners? = null
 
     class ArticleViewHolder(itemView: View) : RecyclerView.ViewHolder(itemView) {
-        val usernameTV: TextView = itemView.findViewById(R.id.usernameTV)
-        val roleTV: TextView = itemView.findViewById(R.id.roleTV)
-        val emailTV: TextView = itemView.findViewById(R.id.emailTV)
-        val passwordTV: TextView = itemView.findViewById(R.id.passwordTV)
-        val viewUserBT: Button = itemView.findViewById(R.id.viewUserBT)
+        val nameTV: TextView = itemView.findViewById(R.id.nameDisplayMTV)
+        val roleTV: TextView = itemView.findViewById(R.id.userRoleDisplayMTV)
+        val emailTV: TextView = itemView.findViewById(R.id.emailDisplayMTV)
+        val phoneTV: TextView = itemView.findViewById(R.id.phoneDisplayMTV)
+        val deleteUserBT: Button = itemView.findViewById(R.id.deleteUserBT)
     }
 
     interface OnItemClickListeners {
-        fun onClick(article:ManageData,position: Int)
+        fun onDelete(article: ManageData, position: Int)
     }
 
-    fun setClickListeners(onItemClick:OnItemClickListeners) {
-        onItemClickListner = onItemClick
+    fun setClickListeners(onItemClick: OnItemClickListeners) {
+        onItemClickListener = onItemClick
     }
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): ArticleViewHolder {
-        val itemView = LayoutInflater.from(parent.context).inflate(R.layout.manage_user_layout, parent, false)
+        val itemView = LayoutInflater.from(parent.context)
+            .inflate(R.layout.manage_user_layout, parent, false)
         return ArticleViewHolder(itemView)
     }
 
     override fun onBindViewHolder(holder: ArticleViewHolder, position: Int) {
         val currentItem = articleList[position]
-        holder.usernameTV.text = currentItem.usernameTV
+        holder.nameTV.text = currentItem.nameTV
         holder.roleTV.text = currentItem.roleTV
         holder.emailTV.text = currentItem.emailTV
-        holder.passwordTV.text = currentItem.passwordTV
-        holder.viewUserBT.setOnClickListener {
-            onItemClickListner?.onClick(currentItem,position)
-        }
+        holder.phoneTV.text = currentItem.phoneTV
 
+        holder.deleteUserBT.setOnClickListener {
+            onItemClickListener?.onDelete(currentItem, position)
+        }
     }
 
     override fun getItemCount() = articleList.size

@@ -115,7 +115,7 @@
     </androidx.constraintlayout.widget.ConstraintLayout>
 
     <androidx.constraintlayout.widget.ConstraintLayout
-        android:id="@+id/rulesandactsCL"
+        android:id="@+id/glossaryCL"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         app:layout_constraintBottom_toTopOf="@+id/manageusersCL"
@@ -138,7 +138,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:fontFamily="@font/myanmar_regular"
-            android:text="@string/rules_and_acts"
+            android:text="@string/glossaryTxt"
             android:textColor="@color/black"
             app:layout_constraintEnd_toEndOf="@+id/imageView2"
             app:layout_constraintStart_toStartOf="parent"
@@ -151,7 +151,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         app:layout_constraintBottom_toTopOf="@+id/faqsCL"
-        app:layout_constraintEnd_toStartOf="@+id/rulesandactsCL"
+        app:layout_constraintEnd_toStartOf="@+id/glossaryCL"
         app:layout_constraintHorizontal_bias="0.5"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/constraintLayout"
@@ -219,7 +219,7 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.5"
         app:layout_constraintStart_toEndOf="@+id/faqsCL"
-        app:layout_constraintTop_toBottomOf="@+id/rulesandactsCL">
+        app:layout_constraintTop_toBottomOf="@+id/glossaryCL">
 
         <ImageView
             android:id="@+id/manageUsersIV"

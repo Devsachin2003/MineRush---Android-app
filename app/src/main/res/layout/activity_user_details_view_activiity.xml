@@ -5,7 +5,7 @@
     android:id="@+id/main"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".Activity.Admin.UserDetailsViewActivity">
+    tools:context=".Admin.UserDetailsViewActivity">
 
     <View
         android:id="@+id/textView1"
@@ -58,7 +58,7 @@
     <View
         android:id="@+id/view"
         android:layout_width="match_parent"
-        android:layout_height="450dp"
+        android:layout_height="500dp"
         android:layout_marginLeft="20dp"
         android:layout_marginTop="40dp"
         android:layout_marginRight="20dp"
@@ -167,6 +167,20 @@
         android:textStyle="bold"
         app:layout_constraintStart_toStartOf="@+id/view"
         app:layout_constraintTop_toBottomOf="@+id/organizationTV" />
+
+    <androidx.appcompat.widget.AppCompatButton
+        android:id="@+id/deleteUserBT"
+        android:layout_width="120dp"
+        android:layout_height="40dp"
+        android:layout_marginTop="20dp"
+        android:background="@drawable/round_button"
+        android:backgroundTint="@color/colorB925"
+        android:text="@string/delete_userTxt"
+        android:textColor="@color/white"
+        app:layout_constraintBottom_toBottomOf="@+id/view"
+        app:layout_constraintEnd_toEndOf="@+id/view"
+        app:layout_constraintStart_toStartOf="@+id/view"
+        app:layout_constraintTop_toBottomOf="@+id/roleTV" />
 
     <TextView
         android:id="@+id/nameDisplay"

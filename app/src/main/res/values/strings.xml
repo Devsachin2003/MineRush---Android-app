@@ -272,6 +272,18 @@ This app provides general information and tools for stakeholders and customers i
     <string name="branchTxt">Branch</string>
     <string name="year_of_study_Txt">Year of study</string>
     <string name="skillsTxt">Skills</string>
+    <string name="company_nameTxt">company name</string>
+    <string name="addressET">Address</string>
+    <string name="add_glossaryTV">ADD GLOSSARY</string>
+    <string name="add_term">ADD TERM</string>
+    <string name="enter_term">Enter term</string>
+    <string name="glossaryTxt">Glossary</string>
+    <string name="modeEV">mode</string>
+    <string name="responsibilityTxt">RESPONSIBILITY:</string>
+    <string name="degreeTV">Degree:</string>
+    <string name="yearTxt">Year:</string>
+    <string name="delete_userTxt">DELETE USER</string>
+    <string name="deletetxt">Delete</string>
     <string-array name="gender_array">
         <item>Male</item>
         <item>Female</item>

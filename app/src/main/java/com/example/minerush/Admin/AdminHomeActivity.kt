@@ -25,14 +25,8 @@ class AdminHomeActivity : AppCompatActivity() {
             val intent = Intent(this,AddInternshipDetailsActivity::class.java)
             startActivity(intent)
         }
-        binding.rulesandactsCL.setOnClickListener {
-            val intent = Intent(this,UpdateExistingRuleActivity::class.java)
-            startActivity(intent)
-        }
-        binding.recentlyRegisteredUsersCL.setOnClickListener {
-            val intent = Intent(this,RecentlyRegisteredUsersViewDetailsActivity::class.java)
-            startActivity(intent)
-        }
+
+
         binding.viewRecentApplicationsCL.setOnClickListener {
             val intent = Intent(this,NewInternApplicantActivity::class.java)
             startActivity(intent)

@@ -136,6 +136,22 @@
                 app:layout_constraintTop_toTopOf="parent" />
 
             <EditText
+                android:id="@+id/addressET"
+                android:layout_width="match_parent"
+                android:layout_height="136dp"
+                android:layout_marginHorizontal="40dp"
+                android:layout_marginTop="40dp"
+                android:background="@drawable/edit_text_box"
+                android:fontFamily="@font/myanmar_bold"
+                android:gravity="center_vertical"
+                android:hint="@string/addressET"
+                android:paddingVertical="5sp"
+                android:paddingStart="15sp"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <EditText
                 android:id="@+id/branchET"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
@@ -182,34 +198,23 @@
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toTopOf="parent" />
-            <!-- Add more views as needed -->
 
-            <!-- Upload Proof Section -->
-            <LinearLayout
+            <EditText
+                android:id="@+id/companyET"
                 android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_marginTop="30dp"
-                android:orientation="horizontal"
-                android:layout_marginStart="40dp">
-
-                <TextView
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:text="@string/upload_proof"
-                    android:textSize="15sp"
-                    android:fontFamily="@font/myanmar_bold" />
-
-                <androidx.appcompat.widget.AppCompatButton
-                    android:id="@+id/uploadProofBTN"
-                    android:layout_width="wrap_content"
-                    android:layout_height="30dp"
-                    android:layout_marginStart="16dp"
-                    android:background="@drawable/round_button"
-                    android:backgroundTint="@color/colorB925"
-                    android:paddingHorizontal="53dp"
-                    android:text="@string/upload"
-                    android:textColor="@color/black" />
-            </LinearLayout>
+                android:layout_height="40dp"
+                android:layout_marginHorizontal="40dp"
+                android:layout_marginTop="40dp"
+                android:background="@drawable/edit_text_box"
+                android:fontFamily="@font/myanmar_bold"
+                android:gravity="center_vertical"
+                android:hint="@string/company_nameTxt"
+                android:paddingVertical="5sp"
+                android:paddingStart="15sp"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+            <!-- Add more views as needed -->
 
             <!-- Statement of Purpose Section -->
             <LinearLayout
@@ -242,7 +247,7 @@
 
 
             <androidx.appcompat.widget.AppCompatButton
-                android:id="@+id/clearBTN"
+                android:id="@+id/applyBTN"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="40dp"

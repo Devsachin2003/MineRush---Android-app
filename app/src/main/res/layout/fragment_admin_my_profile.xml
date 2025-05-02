@@ -4,7 +4,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     xmlns:app="http://schemas.android.com/apk/res-auto"
-    tools:context=".Activity.Admin.admin_ui.admin_profile.AdminMyProfileFragment">
+    tools:context=".Admin.admin_ui.admin_profile.AdminMyProfileFragment">
 
     <View
         android:id="@+id/view"
@@ -75,26 +75,13 @@
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/profilePicLay" />
 
-    </LinearLayout>
-
-    <LinearLayout
-        android:id="@+id/adminAgeLinearLayout"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="20dp"
-        android:layout_marginStart="30dp"
-        android:layout_marginEnd="30dp"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/adminGenderLinearLayout">
-
         <TextView
-            android:id="@+id/genderMyProfileDisplay"
+            android:id="@+id/genderDisplay"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:fontFamily="@font/myanmar_regular"
             android:gravity="center"
-            android:text="@string/age"
+            android:text="@string/gender_my_profile"
             android:textColor="@color/black"
             android:textSize="20sp"
             app:layout_constraintBottom_toBottomOf="parent"
@@ -103,6 +90,7 @@
             app:layout_constraintTop_toBottomOf="@+id/profilePicLay" />
 
     </LinearLayout>
+
 
     <LinearLayout
         android:id="@+id/userMailLinearLayout"
@@ -113,7 +101,7 @@
         android:layout_marginTop="20dp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/adminAgeLinearLayout">
+        app:layout_constraintTop_toBottomOf="@+id/adminGenderLinearLayout">
 
         <TextView
             android:id="@+id/userMailMyProfileDisplay"
@@ -126,6 +114,19 @@
             android:textSize="20sp"
             app:layout_constraintTop_toBottomOf="@+id/userAgeLinearLayout"
             tools:layout_editor_absoluteX="360dp" />
+
+        <TextView
+            android:id="@+id/emailDisplay"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:fontFamily="@font/myanmar_regular"
+            android:gravity="center"
+            android:text="@string/email"
+            android:textColor="@color/black"
+            android:textSize="20sp"
+            app:layout_constraintTop_toBottomOf="@+id/userAgeLinearLayout"
+            tools:layout_editor_absoluteX="360dp" />
+
     </LinearLayout>
 
     <LinearLayout
@@ -141,6 +142,18 @@
 
         <TextView
             android:id="@+id/userPhoneDisplay"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:fontFamily="@font/myanmar_regular"
+            android:gravity="center"
+            android:text="@string/user_phone"
+            android:textColor="@color/black"
+            android:textSize="20sp"
+            app:layout_constraintTop_toBottomOf="@+id/userAgeLinearLayout"
+            tools:layout_editor_absoluteX="360dp" />
+
+        <TextView
+            android:id="@+id/phoneDisplay"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:fontFamily="@font/myanmar_regular"
@@ -169,31 +182,19 @@
             android:layout_height="wrap_content"
             android:fontFamily="@font/myanmar_regular"
             android:gravity="center"
-            android:text="@string/user_role"
+            android:text="@string/responsibilityTxt"
             android:textColor="@color/black"
             android:textSize="20sp"
             app:layout_constraintTop_toBottomOf="@+id/userAgeLinearLayout"
             tools:layout_editor_absoluteX="360dp" />
-    </LinearLayout>
-
-    <LinearLayout
-        android:id="@+id/adminOrganizationLinearLayout"
-        android:layout_marginTop="20dp"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="30dp"
-        android:layout_marginEnd="30dp"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/userRoleLinearLayout">
 
         <TextView
-            android:id="@+id/userOrganizationDisplay"
+            android:id="@+id/respDisplay"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:fontFamily="@font/myanmar_regular"
             android:gravity="center"
-            android:text="@string/user_organization"
+            android:text="@string/about_us"
             android:textColor="@color/black"
             android:textSize="20sp"
             app:layout_constraintTop_toBottomOf="@+id/userAgeLinearLayout"
@@ -201,16 +202,17 @@
     </LinearLayout>
 
     <androidx.appcompat.widget.AppCompatButton
+        android:id="@+id/editAdminProfileBT"
         android:layout_width="240dp"
         android:layout_height="wrap_content"
+        android:background="@color/colorB925"
         android:text="@string/edit_profile"
+        android:textAllCaps="false"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        android:background="@color/colorB925"
-        android:textAllCaps="false"
 
-        app:layout_constraintTop_toBottomOf="@+id/adminOrganizationLinearLayout" />
+        app:layout_constraintTop_toBottomOf="@+id/userRoleLinearLayout" />
 
 
 

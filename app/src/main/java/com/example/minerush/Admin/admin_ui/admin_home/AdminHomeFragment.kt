@@ -7,11 +7,11 @@ import android.view.View
 import android.view.ViewGroup
 import androidx.fragment.app.Fragment
 import com.example.minerush.Admin.AddFaqActivity
+import com.example.minerush.Admin.AddGlossaryActivity
 import com.example.minerush.Admin.AddInternshipDetailsActivity
 import com.example.minerush.Admin.ManageUsersActivity
 import com.example.minerush.Admin.NewInternApplicantActivity
 import com.example.minerush.Admin.RecentlyRegisteredUsersViewDetailsActivity
-import com.example.minerush.Admin.UpdateExistingRuleActivity
 import com.example.minerush.databinding.FragmentAdminHomeBinding
 
 class AdminHomeFragment : Fragment() {
@@ -31,8 +31,8 @@ class AdminHomeFragment : Fragment() {
             val intent = Intent(requireContext(), AddInternshipDetailsActivity::class.java)
             startActivity(intent)
         }
-        binding.rulesandactsCL.setOnClickListener {
-            val intent = Intent(requireContext(), UpdateExistingRuleActivity::class.java)
+        binding.glossaryCL.setOnClickListener {
+            val intent = Intent(requireContext(), AddGlossaryActivity::class.java)
             startActivity(intent)
         }
         binding.faqsCL.setOnClickListener {
