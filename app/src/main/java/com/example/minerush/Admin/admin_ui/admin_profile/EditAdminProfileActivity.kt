@@ -1,9 +1,11 @@
 package com.example.minerush.Admin.admin_ui.admin_profile
 
+import android.content.Intent
 import android.os.Bundle
-import android.view.View
 import android.widget.*
 import androidx.activity.enableEdgeToEdge
+import androidx.activity.result.ActivityResultLauncher
+import androidx.activity.result.contract.ActivityResultContracts
 import androidx.appcompat.app.AppCompatActivity
 import androidx.core.view.ViewCompat
 import androidx.core.view.WindowInsetsCompat
@@ -11,11 +13,11 @@ import com.example.minerush.R
 
 class EditAdminProfileActivity : AppCompatActivity() {
 
+    private lateinit var pickImageLauncher: ActivityResultLauncher<Intent>
     private lateinit var backIV: ImageView
     private lateinit var editTextUserName: EditText
     private lateinit var editTextPhone: EditText
     private lateinit var genderSpinner: Spinner
-    private lateinit var editTextOrganization: EditText
     private lateinit var uploadButton: Button
     private lateinit var resetButton: Button
     private lateinit var saveDetailsButton: Button
@@ -45,31 +47,40 @@ class EditAdminProfileActivity : AppCompatActivity() {
             onBackPressedDispatcher.onBackPressed()
         }
 
-        // Populate spinners
+        // Populate gender spinner
         val genderOptions = arrayOf("Select Gender", "Male", "Female", "Other")
-
         genderSpinner.adapter = ArrayAdapter(this, android.R.layout.simple_spinner_dropdown_item, genderOptions)
 
-        // Upload button action
-        uploadButton.setOnClickListener {
-            Toast.makeText(this, "Upload image logic goes here", Toast.LENGTH_SHORT).show()
+        // Register image picker result launcher
+        pickImageLauncher = registerForActivityResult(ActivityResultContracts.StartActivityForResult()) { result ->
+            if (result.resultCode == RESULT_OK) {
+                val selectedImageUri = result.data?.data
+                if (selectedImageUri != null) {
+                    Toast.makeText(this, "Selected: $selectedImageUri", Toast.LENGTH_SHORT).show()
+                }
+            }
         }
 
-        // Reset button action
+        // Upload button logic
+        uploadButton.setOnClickListener {
+            val intent = Intent(Intent.ACTION_GET_CONTENT)
+            intent.type = "image/*"
+            intent.addCategory(Intent.CATEGORY_OPENABLE)
+            pickImageLauncher.launch(Intent.createChooser(intent, "Select Picture"))
+        }
+
+        // Reset button logic
         resetButton.setOnClickListener {
             editTextUserName.text.clear()
             editTextPhone.text.clear()
-            editTextOrganization.text.clear()
             genderSpinner.setSelection(0)
         }
 
-        // Save details button action
+        // Save button logic
         saveDetailsButton.setOnClickListener {
             val name = editTextUserName.text.toString()
             val phone = editTextPhone.text.toString()
             val gender = genderSpinner.selectedItem.toString()
-
-            // Implement your validation and save logic here
             Toast.makeText(this, "Saved: $name, $phone, $gender", Toast.LENGTH_SHORT).show()
         }
     }

@@ -284,6 +284,8 @@ This app provides general information and tools for stakeholders and customers i
     <string name="yearTxt">Year:</string>
     <string name="delete_userTxt">DELETE USER</string>
     <string name="deletetxt">Delete</string>
+    <string name="company_email">company email</string>
+    <string name="DOB">DOB(YYYY-MM-DD)</string>
     <string-array name="gender_array">
         <item>Male</item>
         <item>Female</item>

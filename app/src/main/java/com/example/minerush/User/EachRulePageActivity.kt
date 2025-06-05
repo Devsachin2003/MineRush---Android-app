@@ -42,7 +42,6 @@ class EachRulePageActivity : AppCompatActivity() {
 
     private fun fetchRuleDetails(id: String) {
 
-
         val apiService = RetrofitClient.instance.getRule(id)
 
         apiService.enqueue(object : Callback<RulesResponse> {
@@ -64,9 +63,8 @@ class EachRulePageActivity : AppCompatActivity() {
     }
 
     private fun displayRuleDetails(rule: RulesData) {
-        binding.ruleNameTV.text = rule.ruleName ?: "No name available"
+        binding.ruleNameTV.text = rule.rulename ?: "No name available"
         binding.descriptionText.text = rule.description
-
 
 //        rule.image?.let {
 //            // Coil will handle loading the image into the ImageView
@@ -81,18 +79,11 @@ class EachRulePageActivity : AppCompatActivity() {
 
 
         binding.viewPdfButton.setOnClickListener {
-            try {
-                val intent = Intent(Intent.ACTION_VIEW)
-                intent.setDataAndType(Uri.parse(rule.document), "application/pdf")
-                intent.flags = Intent.FLAG_ACTIVITY_CLEAR_TOP or Intent.FLAG_ACTIVITY_NEW_TASK
-
-                // Try to open with an external app
-                startActivity(intent)
-            } catch (e: Exception) {
-                Log.e("EachRulePageActivity", "No app found to open PDF", e)
-
-            }
+            val intent = Intent(this, NewPdfViewrActivity::class.java)
+            intent.putExtra("pdfUrl", rule.document)
+            startActivity(intent)
         }
+
 
     }
 

@@ -5,9 +5,11 @@ import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import android.widget.ImageView
 import android.widget.TextView
 import android.widget.Toast
 import androidx.fragment.app.Fragment
+import com.bumptech.glide.Glide
 import com.example.minerush.DataClass.AdminProfileResponse
 import com.example.minerush.R
 import com.example.minerush.api.RetrofitClient
@@ -17,11 +19,12 @@ import retrofit2.Response
 
 class AdminMyProfileFragment : Fragment() {
 
-    private lateinit var username: TextView
+    private lateinit var name: TextView
     private lateinit var gender: TextView
     private lateinit var emailView: TextView
     private lateinit var phone: TextView
     private lateinit var responsibility: TextView
+    private lateinit var profileimage: ImageView
 
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
@@ -33,24 +36,22 @@ class AdminMyProfileFragment : Fragment() {
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
 
-        // Replace with actual email (use SharedPreferences or arguments if needed)
-        val email = "dev@gmail.com"
+        val email = "dev@gmail.com" // replace with dynamic email if needed
 
         // Initialize views
-        username = view.findViewById(R.id.usernameMyProfileDisplay)
-        gender = view.findViewById(R.id.genderDisplay)
-        emailView = view.findViewById(R.id.emailDisplay)
-        phone = view.findViewById(R.id.phoneDisplay)
+        name = view.findViewById(R.id.AdminNameDisplay)
+        gender = view.findViewById(R.id.adminGenderDisplay)
+        emailView = view.findViewById(R.id.AdminEmailDisplay)
+        phone = view.findViewById(R.id.AdminPhoneDisplay)
         responsibility = view.findViewById(R.id.respDisplay)
+        profileimage = view.findViewById(R.id.AdminProfileImageIV)
 
-        // Set click listener for Edit Profile button
         val editButton = view.findViewById<View>(R.id.editAdminProfileBT)
         editButton.setOnClickListener {
             val intent = Intent(requireContext(), EditAdminProfileActivity::class.java)
             startActivity(intent)
         }
 
-        // Fetch profile data
         loadAdminProfile(email)
     }
 
@@ -63,11 +64,22 @@ class AdminMyProfileFragment : Fragment() {
                 ) {
                     if (response.isSuccessful && response.body() != null) {
                         val admin = response.body()!!.admin
-                        username.text = admin.name
+                        name.text = admin.name
                         gender.text = admin.gender
                         emailView.text = admin.email
                         phone.text = admin.phone
                         responsibility.text = admin.responsibility
+
+                        // ✅ Load profile image with Glide
+                        if (!admin.profile_image.isNullOrEmpty()) {
+                            Glide.with(requireContext())
+                                .load(admin.profile_image)
+                                .placeholder(R.drawable.my_profile) // fallback image
+                                .error(R.drawable.error_image)       // in case of error
+                                .into(profileimage)
+                        } else {
+                            profileimage.setImageResource(R.drawable.my_profile)
+                        }
                     } else {
                         Toast.makeText(requireContext(), "Profile not found", Toast.LENGTH_SHORT).show()
                     }

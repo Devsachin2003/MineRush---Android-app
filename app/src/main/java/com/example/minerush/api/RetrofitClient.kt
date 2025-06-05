@@ -8,7 +8,7 @@ import java.util.concurrent.TimeUnit
 
 
 object RetrofitClient {
-    var BASE_URL: String = "   https://c341-45-251-35-84.ngrok-free.app "
+    var BASE_URL: String = "https://4d7a-45-251-35-96.ngrok-free.app/"
 
 
     val instance: com.example.minerush.api.ApiService by lazy {

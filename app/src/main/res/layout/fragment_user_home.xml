@@ -4,7 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".Activity.User.user_ui.user_home.UserHomeFragment">
+    tools:context=".User.user_ui.user_home.UserHomeFragment">
 
     <View
         android:id="@+id/view1"
@@ -16,7 +16,7 @@
         app:layout_constraintTop_toTopOf="parent" />
 
     <TextView
-        android:id="@+id/recentlyRegisteredUserTV"
+        android:id="@+id/WelcomeTV"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginHorizontal="20dp"
@@ -25,14 +25,27 @@
         android:fontFamily="@font/myanmar_regular"
         android:gravity="center"
         android:paddingHorizontal="20dp"
-        android:text="@string/welcome_username"
+        android:text="WELCOME, USER!"
         android:textColor="@color/white"
         android:textSize="30sp"
         app:layout_constraintBottom_toBottomOf="@+id/view1"
         app:layout_constraintEnd_toEndOf="@+id/view1"
+        app:layout_constraintStart_toStartOf="@+id/view1"
         app:layout_constraintTop_toTopOf="parent" />
 
-
+    <TextView
+        android:id="@+id/applicationStatusTV"
+        android:layout_width="wrap_content"
+        android:layout_height="60dp"
+        android:layout_marginHorizontal="20dp"
+        android:fontFamily="@font/myanmar_regular"
+        android:gravity="center"
+        android:text="Loading..."
+        android:textColor="@android:color/holo_blue_dark"
+        app:layout_constraintBottom_toTopOf="@+id/helloTextTV"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/view1" />
 
     <TextView
         android:id="@+id/helloTextTV"

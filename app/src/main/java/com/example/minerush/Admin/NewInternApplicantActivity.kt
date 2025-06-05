@@ -45,7 +45,7 @@ class NewInternApplicantActivity : AppCompatActivity() {
             override fun onClick(applicant: InternApplicant, position: Int) {
                 val intent = Intent(
                     this@NewInternApplicantActivity,
-                    ApplicantDetailsForRecentInternApplicationsActivity::class.java
+                    RecentApplicationsApplicantDetailsActivity::class.java
                 )
                 intent.putExtra("name", applicant.name)
                 intent.putExtra("email", applicant.email)

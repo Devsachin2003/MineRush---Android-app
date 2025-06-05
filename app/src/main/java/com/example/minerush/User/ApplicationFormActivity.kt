@@ -60,6 +60,7 @@ class ApplicationFormActivity : AppCompatActivity() {
             val year = binding.yearOfStudyET.text.toString().trim()
             val skills = binding.skillsET.text.toString().trim()
             val company = binding.companyET.text.toString().trim()
+            val company_email = binding.companyMailET.text.toString().trim()
 
             if (selectedPdfUri == null) {
                 Toast.makeText(this, "Please upload your resume", Toast.LENGTH_LONG).show()
@@ -76,7 +77,7 @@ class ApplicationFormActivity : AppCompatActivity() {
             val call = RetrofitClient.instance.submitApplication(
                 part(name), part(gender), part(dob), part(phone),
                 part(email), part(address), part(branch), part(year),
-                part(company), part(skills), resumePart
+                part(company),part(company_email), part(skills), resumePart
             )
 
             call.enqueue(object : Callback<ApiResponse> {

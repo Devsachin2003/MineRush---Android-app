@@ -7,7 +7,7 @@ data class RulesResponse(
 )
 
 data class RulesData(
-    val ruleName: String,
+    val rulename: String,
     val description: String,
     val document: String,
     val image: String,

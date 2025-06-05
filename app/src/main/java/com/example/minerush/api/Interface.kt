@@ -3,17 +3,18 @@ package com.example.minerush.api
 import com.android.lawbot.DataClasses.ChatRequest
 import com.android.lawbot.DataClasses.ChatResponse
 import com.example.minerush.DataClass.AdminProfileResponse
-import com.example.minerush.DataClass.ExploreInternData
+import com.example.minerush.DataClass.ApprovalResponse
+import com.example.minerush.DataClass.CancellationResponse
 import com.example.minerush.DataClass.FaqsResponse
 import com.example.minerush.DataClass.GlossaryResponse
+import com.example.minerush.DataClass.InternApplicantDetailsResponse
 import com.example.minerush.DataClass.InternApplicantResponse
 import com.example.minerush.DataClass.InternshipResponse
-import com.example.minerush.DataClass.ManageData
 import com.example.minerush.DataClass.ManageUsersResponse
 import com.example.minerush.DataClass.RecentUsersResponse
 import com.example.minerush.DataClass.RulesResponse
+import com.example.minerush.DataClass.StatusResponse
 import com.example.minerush.DataClass.UserMyProfileData
-import com.example.minerush.User.user_ui.user_profile.UserMyProfileFragment
 import com.example.minerush.api.serverresponse.ApiResponse
 import com.example.minerush.api.serverresponse.CommonResponse
 import com.example.minerush.api.serverresponse.LoginResponse
@@ -23,7 +24,6 @@ import okhttp3.RequestBody
 import okhttp3.ResponseBody
 import retrofit2.Call
 import retrofit2.http.Body
-import retrofit2.http.DELETE
 import retrofit2.http.Field
 import retrofit2.http.FormUrlEncoded
 import retrofit2.http.GET
@@ -34,6 +34,8 @@ import retrofit2.http.POST
 import retrofit2.http.Part
 import retrofit2.http.Path
 import retrofit2.http.Query
+import retrofit2.http.Url
+
 
 interface ApiService {
 
@@ -41,6 +43,9 @@ interface ApiService {
     @Headers("Content-Type: application/json")
     @POST("/chat")
     fun sendMessage(@Body request: ChatRequest): Call<ChatResponse>
+
+    @GET
+    fun downloadPdf(@Url fileUrl: String?): Call<ResponseBody?>
 
     // ✅ Login endpoint
     @FormUrlEncoded
@@ -93,6 +98,7 @@ interface ApiService {
         @Part("degree_branch") branch: RequestBody,
         @Part("year_of_study") year: RequestBody,
         @Part("company_name") company: RequestBody,
+        @Part("company_email") company_email: RequestBody,
         @Part("skills") skills: RequestBody,
         @Part resume: MultipartBody.Part
     ): Call<ApiResponse>
@@ -157,9 +163,23 @@ interface ApiService {
         @Part("email") email: RequestBody,
         @Part("name") name: RequestBody,
         @Part("gender") gender: RequestBody,
+        @Part("phone") phone: RequestBody,
         @Part picture: MultipartBody.Part? = null
     ): Call<AdminProfileResponse>
 
+    @Headers("Accept: application/json")
+    @GET("Userhomepage")
+    fun getUserHomePageStatus(@Query("email") email: String): Call<StatusResponse>
+
+
+    @GET("intern_applicant/{name}")
+    fun getInternApplicantDetails(@Path("name") name: String): Call<InternApplicantDetailsResponse>
+
+    @GET("approve/{name}")
+    fun approveApplicant(@Path("name") name: String): Call<ApprovalResponse> // You'll create ApprovalResponse class
+
+    @GET("cancel/{name}")
+    fun cancelApplicant(@Path("name") name: String): Call<CancellationResponse> // You'll create CancellationResponse class
 
 
 }

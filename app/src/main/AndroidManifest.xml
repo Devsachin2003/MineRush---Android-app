@@ -16,6 +16,12 @@
         android:usesCleartextTraffic="true"
         tools:targetApi="31">
         <activity
+            android:name=".User.NewPdfViewrActivity"
+            android:exported="false" />
+        <activity
+            android:name=".User.PdfViewerActivity"
+            android:exported="false" />
+        <activity
             android:name=".Admin.admin_ui.admin_profile.EditAdminProfileActivity"
             android:exported="false" />
         <activity
