@@ -1,6 +1,7 @@
 package com.example.minerush.User
 
 import android.content.Context
+import android.net.Uri
 import android.os.Bundle
 import android.util.Log
 import android.widget.Toast
@@ -26,11 +27,10 @@ import java.io.IOException
 import java.io.InputStream
 import java.io.OutputStream
 
-
 class NewPdfViewrActivity : AppCompatActivity() {
 
-    private lateinit var binding:ActivityNewPdfViewrBinding
-    lateinit var context:Context
+    private lateinit var binding: ActivityNewPdfViewrBinding
+    private lateinit var context: Context
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -38,35 +38,41 @@ class NewPdfViewrActivity : AppCompatActivity() {
         binding = ActivityNewPdfViewrBinding.inflate(layoutInflater)
         setContentView(binding.root)
         context = this
+
         ViewCompat.setOnApplyWindowInsetsListener(binding.main) { v, insets ->
             val systemBars = insets.getInsets(WindowInsetsCompat.Type.systemBars())
             v.setPadding(systemBars.left, systemBars.top, systemBars.right, systemBars.bottom)
             insets
         }
-        val pdfUrl = intent.getStringExtra("pdfUrl") ?: ""
-        downloadPdf(pdfUrl)
+
+        val fileName = intent.getStringExtra("pdfUrl") ?: ""
+        val fullPath = "static/Articles/rules and acts/$fileName"
+        val encodedPath = fileName.replace(" ", "%20")
+        downloadPdf(encodedPath)
+
     }
 
-    fun downloadPdf(fileUrl: String?) {
+    private fun downloadPdf(fileUrl: String) {
         val interceptor = HttpLoggingInterceptor()
         interceptor.setLevel(HttpLoggingInterceptor.Level.BODY)
         val client: OkHttpClient = OkHttpClient.Builder().addInterceptor(interceptor).build()
-        //        Retrofit retrofit = new Retrofit.Builder().baseUrl("https://f08c-14-139-187-225.ngrok-free.app/")
-        val retrofit = Retrofit.Builder().baseUrl(RetrofitClient.BASE_URL)
-            .addConverterFactory(GsonConverterFactory.create())
-            .client(client).build()
-        val service: ApiService = retrofit.create(ApiService::class.java)
 
-        val call: Call<ResponseBody?> = service.downloadPdf("static/Articles/rules%20and%20acts/theminesact1952.pdf")
+        val retrofit = Retrofit.Builder()
+            .baseUrl(RetrofitClient.BASE_URL)
+            .addConverterFactory(GsonConverterFactory.create())
+            .client(client)
+            .build()
+
+        val service: ApiService = retrofit.create(ApiService::class.java)
+        val call: Call<ResponseBody?> = service.downloadPdf(fileUrl)
+
         call.enqueue(object : Callback<ResponseBody?> {
-           override fun onResponse(call: Call<ResponseBody?>, response: Response<ResponseBody?>) {
-                if (response.isSuccessful()) {
+            override fun onResponse(call: Call<ResponseBody?>, response: Response<ResponseBody?>) {
+                if (response.isSuccessful && response.body() != null) {
                     val written = writeResponseBodyToDisk(response.body()!!)
                     if (written) {
-                        // Load the PDF
                         try {
-                            val pdfFile: File =
-                                File("${getExternalFilesDir(null)}/MyApp/downloaded_pdf.pdf")
+                            val pdfFile = File("${getExternalFilesDir(null)}/MyApp/downloaded_pdf.pdf")
                             if (pdfFile.exists()) {
                                 val pdfView: PDFView = binding.pdfView
                                 pdfView.fromFile(pdfFile).load()
@@ -75,33 +81,27 @@ class NewPdfViewrActivity : AppCompatActivity() {
                             }
                         } catch (e: Exception) {
                             e.printStackTrace()
-                            Toast.makeText(context, "Failed Load PDF", Toast.LENGTH_SHORT).show()
+                            Toast.makeText(context, "Failed to load PDF", Toast.LENGTH_SHORT).show()
                         }
                     } else {
-                        Toast.makeText(context, "Failed Load PDF", Toast.LENGTH_SHORT).show()
+                        Toast.makeText(context, "Failed to save PDF", Toast.LENGTH_SHORT).show()
                     }
                 } else {
-                    Toast.makeText(
-                        context,
-                        "Server returned error: " + response.code(),
-                        Toast.LENGTH_SHORT
-                    ).show()
+                    Toast.makeText(context, "Server error: ${response.code()}", Toast.LENGTH_SHORT).show()
                 }
             }
 
-           override fun onFailure(call: Call<ResponseBody?>, t: Throwable) {
-                Toast.makeText(context, "Download failed: " + t.message, Toast.LENGTH_SHORT).show()
+            override fun onFailure(call: Call<ResponseBody?>, t: Throwable) {
+                Toast.makeText(context, "Download failed: ${t.message}", Toast.LENGTH_SHORT).show()
                 Log.e("DownloadPdf", "Error: ", t)
             }
         })
     }
 
     private fun writeResponseBodyToDisk(body: ResponseBody): Boolean {
-        try {
-            val pdfDir: File = File(getExternalFilesDir(null), "MyApp")
-            if (!pdfDir.exists()) {
-                pdfDir.mkdirs()
-            }
+        return try {
+            val pdfDir = File(getExternalFilesDir(null), "MyApp")
+            if (!pdfDir.exists()) pdfDir.mkdirs()
 
             val pdfFile = File(pdfDir, "downloaded_pdf.pdf")
 
@@ -110,7 +110,6 @@ class NewPdfViewrActivity : AppCompatActivity() {
 
             try {
                 val fileReader = ByteArray(50096)
-
                 val fileSize = body.contentLength()
                 var fileSizeDownloaded: Long = 0
 
@@ -119,30 +118,24 @@ class NewPdfViewrActivity : AppCompatActivity() {
 
                 while (true) {
                     val read = inputStream.read(fileReader)
-                    if (read == -1) {
-                        break
-                    }
-
+                    if (read == -1) break
                     outputStream.write(fileReader, 0, read)
-                    fileSizeDownloaded += read.toLong()
-
+                    fileSizeDownloaded += read
                     Log.d("DownloadPdf", "Downloaded $fileSizeDownloaded of $fileSize")
                 }
 
                 outputStream.flush()
-                return true
+                true
             } catch (e: IOException) {
                 Log.e("DownloadPdf", "Error writing PDF to disk", e)
-                return false
+                false
             } finally {
                 inputStream?.close()
                 outputStream?.close()
             }
         } catch (e: IOException) {
-            Log.e("DownloadPdf", "Error writing PDF to disk", e)
-            return false
+            Log.e("DownloadPdf", "Error preparing file", e)
+            false
         }
     }
-
-
 }

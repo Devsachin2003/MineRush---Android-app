@@ -45,7 +45,7 @@ interface ApiService {
     fun sendMessage(@Body request: ChatRequest): Call<ChatResponse>
 
     @GET
-    fun downloadPdf(@Url fileUrl: String?): Call<ResponseBody?>
+    fun downloadPdf(@Url fileUrl: String): Call<ResponseBody?>
 
     // ✅ Login endpoint
     @FormUrlEncoded
