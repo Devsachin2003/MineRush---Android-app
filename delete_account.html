@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Delete Account - MineRush</title>
+    <style>
+      body {
+        font-family: Arial, sans-serif;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        height: 100vh;
+        margin: 0;
+        background-color: #f0f0f5;
+      }
+      .container {
+        background-color: #fff;
+        padding: 40px;
+        border-radius: 12px;
+        box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+        width: 400px;
+        text-align: center;
+      }
+      .container h2 {
+        color: #2e2e2e;
+        margin-bottom: 25px;
+      }
+      input[type="text"],
+      input[type="email"],
+      input[type="password"] {
+        width: 90%;
+        padding: 14px;
+        margin: 14px 0;
+        border: 1px solid #ccc;
+        border-radius: 8px;
+        font-size: 16px;
+      }
+      button {
+        background-color: #b22222;
+        color: white;
+        border: none;
+        padding: 12px 25px;
+        border-radius: 8px;
+        cursor: pointer;
+        font-size: 16px;
+      }
+      button:hover {
+        background-color: #991f1f;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="container">
+      <h2>Delete Your MineRush Account</h2>
+      <form id="deleteForm" onsubmit="return handleDelete(event)">
+        <input type="text" id="name" placeholder="Enter your name" required />
+        <input
+          type="email"
+          id="email"
+          placeholder="Enter your email"
+          required
+        />
+        <input
+          type="password"
+          id="password"
+          placeholder="Enter your password"
+          required
+        />
+        <button type="submit">Delete Account</button>
+      </form>
+    </div>
+
+    <script>
+      function handleDelete(event) {
+        event.preventDefault();
+        document.body.innerHTML = `
+                <h1 style='text-align: center; margin-top: 20%; font-family: Arial, sans-serif; color: #444;'>
+                    Your MineRush account is scheduled for deletion.<br><br>
+                    If this was a mistake, contact support immediately.
+                </h1>`;
+      }
+    </script>
+  </body>
+</html>
